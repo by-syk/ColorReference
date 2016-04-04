@@ -13,6 +13,9 @@
 https://www.google.com/design/spec/style/color.html#
 
 ### Download APK
-* Get it on [Cool Market](http://www.coolapk.com/apk/com.by_syk.mdcolor "Color Reference") or [here](com.by_syk.mdcolor.apk "Color Reference").
+* Get it on
+   * [Google Play](https://play.google.com/store/apps/details?id=com.by_syk.mdcolor "Color Reference")
+   * [Cool Market](http://www.coolapk.com/apk/com.by_syk.mdcolor "Color Reference")
+   * [here](com.by_syk.mdcolor.apk "Color Reference")
    
 *Copyright &#169; 2016 *By_syk*. All rights reserved.*
