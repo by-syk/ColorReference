@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.by_syk.mdcolor.MainActivity">
+
+    <ListView
+        android:id="@+id/lv_colors"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.0"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/padding_above_list"
+        android:scrollbars="none" />
+
+    <!--<View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="?android:colorPrimary" />-->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="?android:attr/dividerVertical" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3.0">
+
+        <RadioGroup
+            android:id="@+id/rg_themes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <RadioButton
+                android:id="@+id/rb_dark_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dark_theme" />
+
+            <RadioButton
+                android:id="@+id/rb_light_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/light_theme" />
+
+        </RadioGroup>
+
+        <TextView
+            android:text="@string/theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/rg_themes"
+            android:layout_alignLeft="@id/rg_themes"
+            android:layout_marginBottom="8dp" />
+
+        <ImageButton
+            android:id="@+id/fab_lucky"
+            android:src="@drawable/ic_fab_lucky"
+            style="@style/fab"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>

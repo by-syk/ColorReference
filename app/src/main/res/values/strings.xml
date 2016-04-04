@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Color Reference</string>
+
+    <string name="dia_title_about">About</string>
+    <string name="dia_title_help">Help</string>
+    <string name="dia_bt_ok">OK</string>
+    <string name="dia_bt_got_it">Got it</string>
+
+    <string name="menu_reset">Reset</string>
+    <string name="menu_about">About</string>
+    <string name="menu_help">Help</string>
+
+    <string name="toast_tap_again_details">Tap again to view details.</string>
+    <string name="toast_copied">Copied to clipboard: %1$s</string>
+    <string name="toast_tap_card_to_copy">Tap a card to copy.</string>
+    <string name="toast_reset">Reset to default theme.</string>
+    <string name="toast_lucky_color">Lucky color: %1$s</string>
+
+    <!--There are no wrong colors. What matters most is how to use them.-->
+    <string name="about_desc">"\"A little rusty on your color theory? Material design makes color easy.\"
+\nColor Reference helps you choose a nice primary color for your new app.
+\nTo learn more, please visit
+https://www.google.com/design/spec/style/color.html#
+\nCopyright &#169; 2016 By_syk. All rights reserved."</string>
+    <string name="help_desc">"Apps that don’t have existing color schemes may select colors from the material design color palette.
+\nSuggestions:
+\n500 version for primary color, 700 version for dark primary color and A200 for accent color."</string>
+
+    <string name="light_theme">Light</string>
+    <string name="dark_theme">Dark</string>
+    <string name="light_with_dark_theme">Light with dark action bar</string>
+    <string name="theme">Theme:</string>
+
+</resources>
