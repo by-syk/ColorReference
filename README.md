@@ -1,6 +1,6 @@
 ![icon.png](icon.png)
 
-# Color Reference
+# Color Reference - Material color palette
 
 ### Description
 "A little rusty on your color theory? Material design makes color easy."
@@ -17,5 +17,5 @@ https://www.google.com/design/spec/style/color.html#
    * [Google Play](https://play.google.com/store/apps/details?id=com.by_syk.mdcolor "Color Reference")
    * [Cool Market](http://www.coolapk.com/apk/com.by_syk.mdcolor "Color Reference")
    * [here](com.by_syk.mdcolor.apk "Color Reference")
-   
-*Copyright &#169; 2016 *By_syk*. All rights reserved.*
+
+*Copyright &#169; 2016 By_syk. All rights reserved.*
