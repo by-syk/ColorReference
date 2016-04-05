@@ -18,4 +18,7 @@ https://www.google.com/design/spec/style/color.html#
    * [Cool Market](http://www.coolapk.com/apk/com.by_syk.mdcolor "Color Reference")
    * [here](com.by_syk.mdcolor.apk "Color Reference")
 
+### Changelog
+* View it [here](CHANGELOG.txt "Changelog").
+
 *Copyright &#169; 2016 By_syk. All rights reserved.*
