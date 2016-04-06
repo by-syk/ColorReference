@@ -13,9 +13,9 @@
 [https://www.google.com/design/spec/style/color.html](https://www.google.com/design/spec/style/color.html "Material design - Color")
 
 ### Download APK
-* Get it on
-   * [Google Play](https://play.google.com/store/apps/details?id=com.by_syk.mdcolor "Color Reference")
-   * [Cool Market](http://www.coolapk.com/apk/com.by_syk.mdcolor "Color Reference")
+* Get it
+   * on [Google Play](https://play.google.com/store/apps/details?id=com.by_syk.mdcolor "Color Reference")
+   * on [Cool Market](http://www.coolapk.com/apk/com.by_syk.mdcolor "Color Reference")
    * [here](com.by_syk.mdcolor.apk "Color Reference")
 
 ### Changelog
