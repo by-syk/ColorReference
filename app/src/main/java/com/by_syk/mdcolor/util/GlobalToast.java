@@ -14,7 +14,7 @@ public class GlobalToast {
             return;
         }
 
-        if (toast == null) { // 首次使用Toast
+        if (toast == null) { // Create Toast firstly.
             toast = Toast.makeText(context.getApplicationContext(), message,
                     is_long ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
         } else {

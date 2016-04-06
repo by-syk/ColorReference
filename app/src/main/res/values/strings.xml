@@ -22,7 +22,7 @@
     <string name="about_desc">"\"A little rusty on your color theory? Material design makes color easy.\"
 \nColor Reference helps you choose a nice primary color for your new app.
 \nTo learn more, please visit
-https://www.google.com/design/spec/style/color.html#
+https://www.google.com/design/spec/style/color.html
 \nSource code on GitHub:
 https://github.com/by-syk/ColorReference
 \nCopyright &#169; 2016 By_syk. All rights reserved."</string>
@@ -32,7 +32,7 @@ https://github.com/by-syk/ColorReference
 
     <string name="light_theme">Light</string>
     <string name="dark_theme">Dark</string>
-    <string name="light_with_dark_theme">Light with dark action bar</string>
+    <!--<string name="light_with_dark_theme">Light with dark action bar</string>-->
     <string name="theme">Theme:</string>
 
 </resources>

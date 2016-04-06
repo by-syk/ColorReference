@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MD配色参考</string>
+
+    <string name="dia_title_about">关于</string>
+    <string name="dia_title_help">帮助</string>
+    <string name="dia_bt_ok">确定</string>
+    <string name="dia_bt_got_it">我知道了</string>
+
+    <string name="menu_reset">重置</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_help">帮助</string>
+
+    <string name="toast_tap_again_details">再次触摸以查看详情</string>
+    <string name="toast_copied">已复制到剪切板：%1$s</string>
+    <string name="toast_tap_card_to_copy">触摸颜色卡片以复制</string>
+    <string name="toast_reset">已重置为默认主题</string>
+    <string name="toast_lucky_color">幸运色：%1$s</string>
+
+    <string name="about_desc">"\"A little rusty on your color theory? Material design makes color easy.\"
+\nColor Reference helps you choose a nice primary color for your new app.
+\nTo learn more, please visit
+https://www.google.com/design/spec/style/color.html
+\nSource code on GitHub:
+https://github.com/by-syk/ColorReference
+\nCopyright &#169; 2016 By_syk. All rights reserved."</string>
+    <!--<string name="about_desc">"\"A little rusty on your color theory? Material design makes color easy.\"
+\n“MD配色参考”提供Material Design调色板，帮助您为新开发的App选择合适配色。
+\n了解更多信息，请访问
+https://www.google.com/design/spec/style/color.html
+\n访问项目在GitHub上的源码:
+https://github.com/by-syk/ColorReference
+\nCopyright &#169; 2016 By_syk. All rights reserved."</string>-->
+
+    <string name="help_desc">"Apps that don’t have existing color schemes may select colors from the material design color palette.
+\nSuggestions:
+\n500 version for primary color, 700 version for dark primary color and A200 for accent color."</string>
+
+    <string name="light_theme">亮色</string>
+    <string name="dark_theme">暗色</string>
+    <string name="theme">主题：</string>
+
+</resources>

@@ -9,8 +9,8 @@
 
 ![screenshot.png](screenshot.png)
 
-* To learn more, please visit
-https://www.google.com/design/spec/style/color.html#
+* To learn more, please visit   
+[https://www.google.com/design/spec/style/color.html](https://www.google.com/design/spec/style/color.html "Material design - Color")
 
 ### Download APK
 * Get it on
@@ -20,5 +20,8 @@ https://www.google.com/design/spec/style/color.html#
 
 ### Changelog
 * View it [here](CHANGELOG.txt "Changelog").
+
+### Contact author
+* E-mail: [By_syk@163.com](mailto:By_syk@163.com "By_syk")
 
 *Copyright &#169; 2016 By_syk. All rights reserved.*

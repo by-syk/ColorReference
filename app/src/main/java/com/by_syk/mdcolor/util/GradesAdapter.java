@@ -1,9 +1,8 @@
 package com.by_syk.mdcolor.util;
 
 import android.content.Context;
-import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,8 @@ import com.by_syk.mdcolor.R;
  * Created by By_syk on 2016-04-01.
  */
 public class GradesAdapter extends BaseAdapter {
+    private Context context = null;
+
     private LayoutInflater layoutInflater = null;
 
     private Palette palette = null;
@@ -29,9 +30,10 @@ public class GradesAdapter extends BaseAdapter {
     }
 
     public GradesAdapter(Context context, Palette palette) {
-        layoutInflater = LayoutInflater.from(context);
-
+        this.context = context;
         this.palette = palette;
+
+        layoutInflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -89,12 +91,14 @@ public class GradesAdapter extends BaseAdapter {
 
         if (palette.isSuggestedGrade(position)) {
             viewHolder.ivStar.setVisibility(View.VISIBLE);
+
+            // Create new Drawable to avoid star color error.
+            Drawable drawable = context.getDrawable(R.drawable.ic_star);
+            viewHolder.ivStar.setImageDrawable(drawable);
             viewHolder.ivStar.getDrawable().setTint(floating_text_color);
         } else {
             viewHolder.ivStar.setVisibility(View.GONE);
         }
-
-        //Log.d("GradesAdapter", palette.getGradeName(position) + (is_floating_text_white ? ": White" : ": Black"));
 
         return convertView;
     }

@@ -615,4 +615,13 @@
         <item name="android:layout_height">@dimen/fab_diameter</item>
     </style>
 
+    <style name="list_item_title">
+        <item name="android:textAppearance">?android:attr/textAppearanceListItem</item>
+    </style>
+
+    <style name="list_item_subtitle">
+        <item name="android:textAppearance">?android:attr/textAppearanceListItemSecondary</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
 </resources>

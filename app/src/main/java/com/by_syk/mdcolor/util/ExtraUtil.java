@@ -19,7 +19,7 @@ public class ExtraUtil {
 
         int temp_pos;
         int temp_end = 0;
-        int temp_end2 = 0;
+        int temp_end2;
         while (temp_end < message.length()) {
             temp_pos = message.indexOf("http", temp_end);
             if (temp_pos < 0) {

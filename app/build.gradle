@@ -8,8 +8,8 @@ android {
         applicationId "com.by_syk.mdcolor"
         minSdkVersion 21
         targetSdkVersion 23
-        versionCode 16040500
-        versionName "1.0.1"
+        versionCode 16040300
+        versionName "1.0.3"
     }
 
     buildTypes {

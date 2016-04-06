@@ -1,3 +1,7 @@
+v1.0.3
+Add Chinese translation partly.
+Fix: star color error.
+
 v1.0.1
 New launcher icon.
 

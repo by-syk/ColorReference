@@ -117,6 +117,10 @@ public class MyAdapter extends BaseAdapter {
         return checked;
     }
 
+    /*public List<Palette> getDataList() {
+        return dataList;
+    }*/
+
     public void notifyRefresh(List<Palette> dataList) {
         if (dataList == null) {
             return;

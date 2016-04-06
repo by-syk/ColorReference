@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,7 +32,7 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends BaseActivity {
-    ListView lvColors;
+    private ListView lvColors;
 
     private MyAdapter myAdapter = null;
 
@@ -48,8 +47,6 @@ public class MainActivity extends BaseActivity {
     }
 
     private void init() {
-        //Log.d("MainActivity", "init()");
-
         lvColors = (ListView) findViewById(R.id.lv_colors);
 
         myAdapter = new MyAdapter(this, sharedPreferences.getInt(C.SP_THEME_COLOR, -1));
@@ -65,7 +62,8 @@ public class MainActivity extends BaseActivity {
                     return;
                 }
 
-                // 提示双击查看详情
+                // Tell users how to view details.
+                // Just once.
                 viewDetailsToast();
 
                 sharedPreferences.edit().putInt(C.SP_THEME_COLOR, position)
@@ -88,7 +86,10 @@ public class MainActivity extends BaseActivity {
                     return;
                 }
 
-                sharedPreferences.edit().putInt(C.SP_THEME_STYLE, theme_style).apply();
+                sharedPreferences.edit()
+                        .putInt(C.SP_THEME_STYLE, theme_style)
+                        .putBoolean(C.SP_SMOOTH_SCROLL, false)
+                        .apply();
 
                 changeTheme();
             }
@@ -128,7 +129,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void gotoDetails(int which) {
-        // 不再提示双击查看详情
+        // Do not show toast again.
         sharedPreferences.edit().putBoolean("toast_view_details", false).apply();
 
         Intent intent = new Intent(this, DetailsActivity.class);
@@ -163,7 +164,6 @@ public class MainActivity extends BaseActivity {
     }
 
     private class LoadColorsTask extends AsyncTask<String, Integer, List<Palette>> {
-
         @Override
         protected List<Palette> doInBackground(String... params) {
             return loadColors();
@@ -194,7 +194,7 @@ public class MainActivity extends BaseActivity {
         String tempStr;
         try {
             while ((tempStr = bufferedReader.readLine()) != null) {
-                if (tempStr.startsWith("#")) {
+                if (tempStr.startsWith("# ")) {
                     continue;
                 }
 
@@ -220,10 +220,13 @@ public class MainActivity extends BaseActivity {
 
     /*private void reload() {
         Intent intent = getIntent();
-        overridePendingTransition(0, 0);//不设置进入退出动画
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
         finish();
+
+        // No animation.
         overridePendingTransition(0, 0);
+
         startActivity(intent);
     }*/
 
@@ -238,7 +241,7 @@ public class MainActivity extends BaseActivity {
                 .create();
         alertDialog.show();
 
-        // 使内容中的链接可以被点击
+        // Make the url text clickable.
         ((TextView) alertDialog.findViewById(android.R.id.message))
                 .setMovementMethod(LinkMovementMethod.getInstance());
     }
@@ -272,6 +275,9 @@ public class MainActivity extends BaseActivity {
                 (new Handler()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        // Instead of this:
+                        // ((RadioGroup) findViewById(R.id.rg_themes)).check(R.id.rb_dark_theme);
+
                         ((RadioGroup) findViewById(R.id.rg_themes)).clearCheck();
                         ((RadioButton) findViewById(R.id.rb_dark_theme)).setChecked(true);
                     }

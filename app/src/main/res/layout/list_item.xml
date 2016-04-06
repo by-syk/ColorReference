@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--style="@style/activated"-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="@dimen/list_unit_padding"
-    android:gravity="center_vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin">
+    android:minHeight="@dimen/list_height">
 
     <!--android:src="@drawable/ic_head"-->
+    <!--android:layout_marginLeft="@dimen/list_margin"-->
     <ImageView
         android:id="@+id/iv_head"
         android:layout_width="48dp"
-        android:layout_height="48dp" />
+        android:layout_height="48dp"
+        android:layout_marginLeft="@dimen/list_margin_fix_ic"
+        android:layout_centerVertical="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="@dimen/padding_before_list_text"
         android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true">
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceListItem" />
+            style="@style/list_item_title" />
 
         <TextView
             android:id="@+id/tv_hex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceListItemSecondary" />
+            style="@style/list_item_subtitle" />
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

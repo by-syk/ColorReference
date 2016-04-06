@@ -3,4 +3,8 @@
 
     <dimen name="fab_margin">24dp</dimen>
 
+    <dimen name="list_margin">24dp</dimen>
+    <dimen name="list_margin_fix_ic">20dp</dimen>
+    <dimen name="padding_before_list_text">80dp</dimen>
+
 </resources>

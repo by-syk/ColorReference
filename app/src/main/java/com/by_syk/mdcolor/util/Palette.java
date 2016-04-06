@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Palette implements Serializable {
     private final int NUM = 14;
 
-    // 颜色名
+    // Color name
     private String name = "";
 
     /*
@@ -24,7 +24,7 @@ public class Palette implements Serializable {
      * 背景之上的建议文字颜色
      */
     private int[] colors_floating_text = new int[NUM];
-    // 颜色深度名
+    // The name of color versions
     private String[] gradeNames = {"50", "100", "200", "300", "400", "500", "600", "700", "800", "900",
             "A100", "A200", "A400", "A700"
     };
@@ -83,10 +83,10 @@ public class Palette implements Serializable {
     }
 
     /**
-     * @param csvData 格式如：
+     * @param csvData Like:
      *                Red,
-     *                #FFEBEE,b,#FFCDD2,b,#EF9A9A,b,#E57373,b,#EF5350,w,#F44336,w,#E53935,w,#D32F2F,w,#C62828,w,#B71C1C,w,
-     *                #FF8A80,b,#FF5252,w,#FF1744,w,#D50000,w
+     *                #FFEBEE,#000000,#FFCDD2,#000000,#EF9A9A,#000000,#E57373,#000000,#EF5350,#FFFFFF,#F44336,#FFFFFF,#E53935,#FFFFFF,#D32F2F,#FFFFFF,#C62828,#FFFFFF,#B71C1C,#FFFFFF,
+     *                #FF8A80,#000000,#FF5252,#FFFFFF,#FF1744,#FFFFFF,#D50000,#FFFFFF
      */
     public boolean setAll(String csvData) {
         if (TextUtils.isEmpty(csvData)) {
@@ -217,7 +217,7 @@ public class Palette implements Serializable {
     }
 
     /**
-     * 500、700、800、A200
+     * 500、700、A200
      */
     public boolean isSuggestedGrade(int i) {
         int order = getArrOrder(i);

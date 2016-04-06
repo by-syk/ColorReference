@@ -8,19 +8,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.by_syk.mdcolor.util.C;
-import com.by_syk.mdcolor.util.ExtraUtil;
 import com.by_syk.mdcolor.util.GlobalToast;
 import com.by_syk.mdcolor.util.GradesAdapter;
 import com.by_syk.mdcolor.util.Palette;
@@ -29,7 +24,7 @@ import com.by_syk.mdcolor.util.Palette;
  * Created by By_syk on 2016-04-01.
  */
 public class DetailsActivity extends BaseActivity {
-    ListView lvGrades;
+    private ListView lvGrades;
 
     private GradesAdapter gradesAdapter = null;
     private Palette palette = null;
@@ -41,7 +36,8 @@ public class DetailsActivity extends BaseActivity {
 
         init();
 
-        // 提示触摸卡片复制颜色
+        // Tell users how to copy color values.
+        // Just once.
         copyToast();
     }
 
@@ -63,7 +59,7 @@ public class DetailsActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 copy2Clipboard(palette.getColorStr(position));
 
-                // 不再提示触摸卡片复制颜色
+                // Do not show again.
                 sharedPreferences.edit().putBoolean("toast_copy_color", false).apply();
             }
         });
@@ -91,6 +87,7 @@ public class DetailsActivity extends BaseActivity {
     private void helpDialog() {
         String message = getString(R.string.help_desc);
 
+        // Add underlines for words: 500, 700, A200.
         SpannableString spannableString = new SpannableString(message);
         int index = message.indexOf("500");
         //new ForegroundColorSpan(palette.getColor(500))
