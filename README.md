@@ -5,10 +5,10 @@
 
 ### Description
 
-`"A little rusty on your color theory? Material design makes color easy."`
+`"A little rusty on your color theory? Material design makes color easy."`   
 — Google says.
    
-* **Color Reference** helps you choose a nice primary color for your new Android app.
+**Color Reference** helps you choose a nice primary color for your new Android app.
 
 ![screenshot.png](screenshot.png)
 
