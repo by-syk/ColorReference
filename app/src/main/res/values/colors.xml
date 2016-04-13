@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="floating_color_for_accent_white">#ffffff</color>
+    <color name="floating_color_for_accent_black">#1c1c1c</color>
+
+    <color name="md_primary_black">#1b1c07</color>
+    <color name="md_primary_white">#ffffff</color>
+
     <color name="primary_color_red">#f44336</color>
     <color name="primary_color_red_dark">#d32f2f</color>
     <color name="accent_color_red">#ff5252</color>

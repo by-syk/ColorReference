@@ -60,16 +60,16 @@ public class DetailsActivity extends BaseActivity {
                 copy2Clipboard(palette.getColorStr(position));
 
                 // Do not show again.
-                sharedPreferences.edit().putBoolean("toast_copy_color", false).apply();
+                sp.save(C.SP_TOAST_COPY, false);
             }
         });
     }
 
     private void copyToast() {
-        if (sharedPreferences.getBoolean("toast_copy_color", true)) {
+        if (sp.getBoolean(C.SP_TOAST_COPY, true)) {
             GlobalToast.showToast(this, R.string.toast_tap_card_to_copy);
 
-            //sharedPreferences.edit().putBoolean("toast_view_details", false).apply();
+            //sp.save(C.SP_TOAST_COPY, false);
         }
     }
 
@@ -110,9 +110,9 @@ public class DetailsActivity extends BaseActivity {
 
     private AlertDialog.Builder getDialogBuilder() {
         if (/*C.SDK >= 21 && */C.SDK < 23) {
-            if (sharedPreferences.getInt(C.SP_THEME_COLOR, -1) >= 0) {
+            if (sp.getInt(C.SP_THEME_COLOR, -1) >= 0) {
                 return new AlertDialog.Builder(this,
-                        DIALOG_THEME_ID[sharedPreferences.getInt(C.SP_THEME_STYLE, 0)]);
+                        DIALOG_THEME_ID[sp.getInt(C.SP_THEME_STYLE)]);
             }
         }
 

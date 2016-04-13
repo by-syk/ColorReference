@@ -1,3 +1,7 @@
+v1.0.9
+New launcher icon.
+Add UI BOARD for seeing how color affect widgets.
+
 v1.0.3
 Add Chinese translation partly.
 Fix: star color error.

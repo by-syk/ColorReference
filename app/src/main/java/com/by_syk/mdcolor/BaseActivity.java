@@ -1,17 +1,16 @@
 package com.by_syk.mdcolor;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.by_syk.mdcolor.util.C;
+import com.by_syk.mdcolor.util.SP;
 
 /**
  * Created by By_syk on 2016-03-31.
  */
 public class BaseActivity extends Activity {
-    SharedPreferences sharedPreferences;
+    SP sp = null;
 
     public final int[] DEFAULT_THEME_ID = { R.style.app_theme_dark,
             R.style.app_theme_light, R.style.app_theme_light_d };
@@ -41,11 +40,11 @@ public class BaseActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sharedPreferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
+        sp = new SP(this);
 
-        int theme_color = sharedPreferences.getInt(C.SP_THEME_COLOR, -1);
-        int theme_style = sharedPreferences.getInt(C.SP_THEME_STYLE, 0);
-        boolean with_dark_ab = sharedPreferences.getBoolean(C.SP_WITH_DARK_AB, false);
+        int theme_color = sp.getInt(C.SP_THEME_COLOR, -1);
+        int theme_style = sp.getInt(C.SP_THEME_STYLE);
+        boolean with_dark_ab = sp.getBoolean(C.SP_WITH_DARK_AB);
 
         if (theme_color >= 0 && theme_color < THEMES_ID.length) {
             if (theme_style == 0) {

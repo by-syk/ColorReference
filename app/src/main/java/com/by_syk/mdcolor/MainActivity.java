@@ -1,6 +1,7 @@
 package com.by_syk.mdcolor;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,12 +11,15 @@ import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewStub;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.by_syk.mdcolor.util.C;
@@ -33,6 +37,11 @@ import java.util.Random;
 
 public class MainActivity extends BaseActivity {
     private ListView lvColors;
+    private Switch switchBoard;
+    private RadioGroup radioGroup;
+    private View viewControlBar;
+    private View viewUIBoard;
+    private ImageButton fabLucky;
 
     private MyAdapter myAdapter = null;
 
@@ -48,8 +57,13 @@ public class MainActivity extends BaseActivity {
 
     private void init() {
         lvColors = (ListView) findViewById(R.id.lv_colors);
+        radioGroup = (RadioGroup) findViewById(R.id.rg_themes);
+        viewControlBar = findViewById(R.id.view_control_bar);
+        switchBoard = (Switch) findViewById(R.id.switch_board);
+        fabLucky = (ImageButton) findViewById(R.id.fab_lucky);
 
-        myAdapter = new MyAdapter(this, sharedPreferences.getInt(C.SP_THEME_COLOR, -1));
+        // Sets the data behind the ListView.
+        myAdapter = new MyAdapter(this, sp.getInt(C.SP_THEME_COLOR, -1));
         lvColors.setAdapter(myAdapter);
 
         //lvColors.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
@@ -57,7 +71,7 @@ public class MainActivity extends BaseActivity {
         lvColors.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == sharedPreferences.getInt(C.SP_THEME_COLOR, -1)) {
+                if (position == sp.getInt(C.SP_THEME_COLOR, -1)) {
                     gotoDetails(position);
                     return;
                 }
@@ -66,18 +80,15 @@ public class MainActivity extends BaseActivity {
                 // Just once.
                 viewDetailsToast();
 
-                sharedPreferences.edit().putInt(C.SP_THEME_COLOR, position)
-                        .putBoolean(C.SP_WITH_DARK_AB,
-                                myAdapter.getItem(position).isLightThemeWithDarkABSuggested())
-                        .putBoolean(C.SP_SMOOTH_SCROLL, false)
-                        .apply();
+                sp.put(C.SP_THEME_COLOR, position).put(C.SP_WITH_DARK_AB,
+                        myAdapter.getItem(position).isLightThemeWithDarkABSuggested())
+                        .save();
 
                 changeTheme();
             }
         });
 
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rg_themes);
-        radioGroup.check(switchRadioButtonOrderAndId(sharedPreferences.getInt(C.SP_THEME_STYLE, 0)));
+        radioGroup.check(switchRadioButtonOrderAndId(sp.getInt(C.SP_THEME_STYLE)));
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -86,36 +97,85 @@ public class MainActivity extends BaseActivity {
                     return;
                 }
 
-                sharedPreferences.edit()
-                        .putInt(C.SP_THEME_STYLE, theme_style)
-                        .putBoolean(C.SP_SMOOTH_SCROLL, false)
-                        .apply();
+                sp.save(C.SP_THEME_STYLE, theme_style);
 
                 changeTheme();
             }
         });
 
+        initControlAndUIBoard();
+
         initFAB();
     }
 
+    private void initControlAndUIBoard() {
+        // As default, off if portrait, and on if landscape.
+        if (sp.getBoolean(C.SP_UI_BOARD, getResources().getBoolean(R.bool.is_land))) {
+            viewUIBoard = ((ViewStub) findViewById(R.id.vs_ui_board)).inflate();
+            switchBoard.setChecked(true);
+        }
+
+        switchBoard.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                sp.save(C.SP_UI_BOARD, isChecked);
+
+                if (isChecked) { // Show the UI board.
+                    if (viewUIBoard == null) {
+                        viewUIBoard = ((ViewStub) findViewById(R.id.vs_ui_board)).inflate();
+                    } else {
+                        viewUIBoard.setVisibility(View.VISIBLE);
+                    }
+
+                    if (!getResources().getBoolean(R.bool.is_land)) {
+                        viewControlBar.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,
+                                R.anim.translate));
+                    }
+                    viewUIBoard.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,
+                            R.anim.fade_in));
+                } else { // Hide the UI board.
+                    viewUIBoard.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        viewControlBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //switchBoard.clearFocus();
+
+                switchBoard.performClick();
+            }
+        });
+        /*viewControlBar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switchBoard.requestFocusFromTouch();
+                return false;
+            }
+        });*/
+    }
+
     private void initFAB() {
-        ImageButton fabLucky = (ImageButton) findViewById(R.id.fab_lucky);
+        /*fabLucky.setImageResource(System.currentTimeMillis() % 2 == 0
+                ? R.drawable.ic_fab_random : R.drawable.ic_fab_random2);
+        fabLucky.setImageResource(sharedPreferences.getInt(C.SP_THEME_STYLE, 0) == 0
+                ? R.drawable.ic_fab_random : R.drawable.ic_fab_random2);*/
 
         fabLucky.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Choose a random number except for current one.
                 Random random = new Random();
                 int lucky_one;
                 do {
                     lucky_one = random.nextInt(myAdapter.getCount());
                 } while (lucky_one == myAdapter.getChecked());
 
-                sharedPreferences.edit()
-                        .putInt(C.SP_THEME_COLOR, lucky_one)
-                        .putBoolean(C.SP_WITH_DARK_AB, myAdapter.getItem(lucky_one)
+                sp.put(C.SP_THEME_COLOR, lucky_one)
+                        .put(C.SP_WITH_DARK_AB, myAdapter.getItem(lucky_one)
                                 .isLightThemeWithDarkABSuggested())
-                        .putBoolean(C.SP_SMOOTH_SCROLL, true)
-                        .apply();
+                        .save();
 
                 GlobalToast.showToast(MainActivity.this, getString(R.string.toast_lucky_color,
                         myAdapter.getItem(lucky_one).getName()));
@@ -123,14 +183,39 @@ public class MainActivity extends BaseActivity {
                 changeTheme();
             }
         });
+        fabLucky.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                GlobalToast.showToast(MainActivity.this, R.string.menu_lucky);
+
+                return true;
+            }
+        });
 
         fabLucky.setVisibility(View.VISIBLE);
-        fabLucky.setAnimation(AnimationUtils.loadAnimation(this, R.anim.fab_bottom_in));
+        fabLucky.setAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.fab_bottom_in));
     }
+
+    /*private void showTips() {
+        if (sp.getBoolean(C.SP_BOARD, true) && sp.getInt(C.SP_THEME_COLOR, -1) >= 0) {
+            viewTip = ((ViewStub) findViewById(R.id.vs_tip)).inflate();
+
+            viewTip.findViewById(R.id.bt_hide_tip).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    viewTip.setVisibility(View.GONE);
+
+                    sp.save(C.SP_BOARD, false);
+                }
+            });
+
+            viewTip.startAnimation(AnimationUtils.loadAnimation(this, R.anim.alpha_in));
+        }
+    }*/
 
     private void gotoDetails(int which) {
         // Do not show toast again.
-        sharedPreferences.edit().putBoolean("toast_view_details", false).apply();
+        sp.save(C.SP_TOAST_DETAILS, false);
 
         Intent intent = new Intent(this, DetailsActivity.class);
         intent.putExtra("palette", myAdapter.getItem(which));
@@ -139,10 +224,10 @@ public class MainActivity extends BaseActivity {
     }
 
     private void viewDetailsToast() {
-        if (sharedPreferences.getBoolean("toast_view_details", true)) {
+        if (sp.getBoolean(C.SP_TOAST_DETAILS, true)) {
             GlobalToast.showToast(this, R.string.toast_tap_again_details);
 
-            //sharedPreferences.edit().putBoolean("toast_view_details", false).apply();
+            //sp.save(C.SP_TOAST_DETAILS, false);
         }
     }
 
@@ -176,11 +261,8 @@ public class MainActivity extends BaseActivity {
             myAdapter.notifyRefresh(dataList);
             //myAdapter.notifyDataSetChanged();
 
-            if (sharedPreferences.getBoolean(C.SP_SMOOTH_SCROLL, false)) {
-                lvColors.smoothScrollToPosition(sharedPreferences.getInt(C.SP_THEME_COLOR, 0));
-            } else {
-                lvColors.setSelection(sharedPreferences.getInt(C.SP_THEME_COLOR, 0));
-            }
+            //lvColors.smoothScrollToPosition(sharedPreferences.getInt(C.SP_THEME_COLOR, 0));
+            lvColors.setSelection(sp.getInt(C.SP_THEME_COLOR));
         }
     }
 
@@ -215,6 +297,7 @@ public class MainActivity extends BaseActivity {
 
     private void changeTheme() {
         recreate();
+
         //reload();
     }
 
@@ -238,6 +321,12 @@ public class MainActivity extends BaseActivity {
                 .setTitle(R.string.dia_title_about)
                 .setMessage(message)
                 .setPositiveButton(R.string.dia_bt_ok, null)
+                .setNegativeButton(R.string.dia_bt_rate_me, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ExtraUtil.gotoMarket(MainActivity.this, false);
+                    }
+                })
                 .create();
         alertDialog.show();
 
@@ -248,9 +337,9 @@ public class MainActivity extends BaseActivity {
 
     private AlertDialog.Builder getDialogBuilder() {
         if (/*C.SDK >= 21 && */C.SDK < 23) {
-            if (sharedPreferences.getInt(C.SP_THEME_COLOR, -1) >= 0) {
+            if (sp.getInt(C.SP_THEME_COLOR, -1) >= 0) {
                 return new AlertDialog.Builder(this,
-                        DIALOG_THEME_ID[sharedPreferences.getInt(C.SP_THEME_STYLE, 0)]);
+                        DIALOG_THEME_ID[sp.getInt(C.SP_THEME_STYLE)]);
             }
         }
 
@@ -268,7 +357,7 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_reset: {
-                sharedPreferences.edit().remove(C.SP_THEME_COLOR).apply();
+                sp.delete(C.SP_THEME_COLOR);
 
                 GlobalToast.showToast(this, R.string.toast_reset);
 

@@ -3,19 +3,26 @@
 
     <style name="app_theme" parent="@style/app_theme_dark" />
 
+    <!--<item name="android:colorButtonNormal">@color/accent_color_red</item>-->
     <style name="app_theme_dark" parent="@android:style/Theme.Material">
         <item name="ic_menu_palette">@drawable/ic_menu_palette_dark</item>
         <item name="ic_menu_help">@drawable/ic_menu_help_dark</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/def_button</item>
     </style>
 
     <style name="app_theme_light" parent="@android:style/Theme.Material.Light">
         <item name="ic_menu_palette">@drawable/ic_menu_palette_light</item>
         <item name="ic_menu_help">@drawable/ic_menu_help_light</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_black</item>
+        <item name="button_style">@style/def_button</item>
     </style>
 
     <style name="app_theme_light_d" parent="@android:style/Theme.Material.Light.DarkActionBar">
         <item name="ic_menu_palette">@drawable/ic_menu_palette_dark</item>
         <item name="ic_menu_help">@drawable/ic_menu_help_dark</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_black</item>
+        <item name="button_style">@style/def_button</item>
     </style>
 
     <style name="app_theme_dark.red">
@@ -26,6 +33,7 @@
         <item name="colorPrimary">@color/primary_color_red</item>
         <item name="colorPrimaryDark">@color/primary_color_red_dark</item>
         <item name="colorAccent">@color/accent_color_red</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.red">
@@ -36,6 +44,8 @@
         <item name="colorPrimary">@color/primary_color_red</item>
         <item name="colorPrimaryDark">@color/primary_color_red_dark</item>
         <item name="colorAccent">@color/accent_color_red</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.red">
@@ -46,6 +56,8 @@
         <item name="colorPrimary">@color/primary_color_red</item>
         <item name="colorPrimaryDark">@color/primary_color_red_dark</item>
         <item name="colorAccent">@color/accent_color_red</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.pink">
@@ -56,6 +68,7 @@
         <item name="colorPrimary">@color/primary_color_pink</item>
         <item name="colorPrimaryDark">@color/primary_color_pink_dark</item>
         <item name="colorAccent">@color/accent_color_pink</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.pink">
@@ -66,6 +79,8 @@
         <item name="colorPrimary">@color/primary_color_pink</item>
         <item name="colorPrimaryDark">@color/primary_color_pink_dark</item>
         <item name="colorAccent">@color/accent_color_pink</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.pink">
@@ -76,6 +91,8 @@
         <item name="colorPrimary">@color/primary_color_pink</item>
         <item name="colorPrimaryDark">@color/primary_color_pink_dark</item>
         <item name="colorAccent">@color/accent_color_pink</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.purple">
@@ -86,6 +103,7 @@
         <item name="colorPrimary">@color/primary_color_purple</item>
         <item name="colorPrimaryDark">@color/primary_color_purple_dark</item>
         <item name="colorAccent">@color/accent_color_purple</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.purple">
@@ -96,6 +114,8 @@
         <item name="colorPrimary">@color/primary_color_purple</item>
         <item name="colorPrimaryDark">@color/primary_color_purple_dark</item>
         <item name="colorAccent">@color/accent_color_purple</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.purple">
@@ -106,6 +126,8 @@
         <item name="colorPrimary">@color/primary_color_purple</item>
         <item name="colorPrimaryDark">@color/primary_color_purple_dark</item>
         <item name="colorAccent">@color/accent_color_purple</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.deep_purple">
@@ -116,6 +138,7 @@
         <item name="colorPrimary">@color/primary_color_deep_purple</item>
         <item name="colorPrimaryDark">@color/primary_color_deep_purple_dark</item>
         <item name="colorAccent">@color/accent_color_deep_purple</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.deep_purple">
@@ -126,6 +149,8 @@
         <item name="colorPrimary">@color/primary_color_deep_purple</item>
         <item name="colorPrimaryDark">@color/primary_color_deep_purple_dark</item>
         <item name="colorAccent">@color/accent_color_deep_purple</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.deep_purple">
@@ -136,6 +161,8 @@
         <item name="colorPrimary">@color/primary_color_deep_purple</item>
         <item name="colorPrimaryDark">@color/primary_color_deep_purple_dark</item>
         <item name="colorAccent">@color/accent_color_deep_purple</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.indigo">
@@ -146,6 +173,7 @@
         <item name="colorPrimary">@color/primary_color_indigo</item>
         <item name="colorPrimaryDark">@color/primary_color_indigo_dark</item>
         <item name="colorAccent">@color/accent_color_indigo</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.indigo">
@@ -156,6 +184,8 @@
         <item name="colorPrimary">@color/primary_color_indigo</item>
         <item name="colorPrimaryDark">@color/primary_color_indigo_dark</item>
         <item name="colorAccent">@color/accent_color_indigo</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.indigo">
@@ -166,6 +196,8 @@
         <item name="colorPrimary">@color/primary_color_indigo</item>
         <item name="colorPrimaryDark">@color/primary_color_indigo_dark</item>
         <item name="colorAccent">@color/accent_color_indigo</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.blue">
@@ -176,6 +208,7 @@
         <item name="colorPrimary">@color/primary_color_blue</item>
         <item name="colorPrimaryDark">@color/primary_color_blue_dark</item>
         <item name="colorAccent">@color/accent_color_blue</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.blue">
@@ -186,6 +219,8 @@
         <item name="colorPrimary">@color/primary_color_blue</item>
         <item name="colorPrimaryDark">@color/primary_color_blue_dark</item>
         <item name="colorAccent">@color/accent_color_blue</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.blue">
@@ -196,6 +231,8 @@
         <item name="colorPrimary">@color/primary_color_blue</item>
         <item name="colorPrimaryDark">@color/primary_color_blue_dark</item>
         <item name="colorAccent">@color/accent_color_blue</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.light_blue">
@@ -206,6 +243,7 @@
         <item name="colorPrimary">@color/primary_color_light_blue</item>
         <item name="colorPrimaryDark">@color/primary_color_light_blue_dark</item>
         <item name="colorAccent">@color/accent_color_light_blue</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.light_blue">
@@ -216,6 +254,7 @@
         <item name="colorPrimary">@color/primary_color_light_blue</item>
         <item name="colorPrimaryDark">@color/primary_color_light_blue_dark</item>
         <item name="colorAccent">@color/accent_color_light_blue</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.light_blue">
@@ -226,6 +265,7 @@
         <item name="colorPrimary">@color/primary_color_light_blue</item>
         <item name="colorPrimaryDark">@color/primary_color_light_blue_dark</item>
         <item name="colorAccent">@color/accent_color_light_blue</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.cyan">
@@ -236,6 +276,7 @@
         <item name="colorPrimary">@color/primary_color_cyan</item>
         <item name="colorPrimaryDark">@color/primary_color_cyan_dark</item>
         <item name="colorAccent">@color/accent_color_cyan</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.cyan">
@@ -246,6 +287,7 @@
         <item name="colorPrimary">@color/primary_color_cyan</item>
         <item name="colorPrimaryDark">@color/primary_color_cyan_dark</item>
         <item name="colorAccent">@color/accent_color_cyan</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.cyan">
@@ -256,6 +298,7 @@
         <item name="colorPrimary">@color/primary_color_cyan</item>
         <item name="colorPrimaryDark">@color/primary_color_cyan_dark</item>
         <item name="colorAccent">@color/accent_color_cyan</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.teal">
@@ -266,6 +309,7 @@
         <item name="colorPrimary">@color/primary_color_teal</item>
         <item name="colorPrimaryDark">@color/primary_color_teal_dark</item>
         <item name="colorAccent">@color/accent_color_teal</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.teal">
@@ -276,6 +320,7 @@
         <item name="colorPrimary">@color/primary_color_teal</item>
         <item name="colorPrimaryDark">@color/primary_color_teal_dark</item>
         <item name="colorAccent">@color/accent_color_teal</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.teal">
@@ -286,6 +331,7 @@
         <item name="colorPrimary">@color/primary_color_teal</item>
         <item name="colorPrimaryDark">@color/primary_color_teal_dark</item>
         <item name="colorAccent">@color/accent_color_teal</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.green">
@@ -296,6 +342,7 @@
         <item name="colorPrimary">@color/primary_color_green</item>
         <item name="colorPrimaryDark">@color/primary_color_green_dark</item>
         <item name="colorAccent">@color/accent_color_green</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.green">
@@ -306,6 +353,7 @@
         <item name="colorPrimary">@color/primary_color_green</item>
         <item name="colorPrimaryDark">@color/primary_color_green_dark</item>
         <item name="colorAccent">@color/accent_color_green</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.green">
@@ -316,6 +364,7 @@
         <item name="colorPrimary">@color/primary_color_green</item>
         <item name="colorPrimaryDark">@color/primary_color_green_dark</item>
         <item name="colorAccent">@color/accent_color_green</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.light_green">
@@ -326,6 +375,7 @@
         <item name="colorPrimary">@color/primary_color_light_green</item>
         <item name="colorPrimaryDark">@color/primary_color_light_green_dark</item>
         <item name="colorAccent">@color/accent_color_light_green</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.light_green">
@@ -336,6 +386,7 @@
         <item name="colorPrimary">@color/primary_color_light_green</item>
         <item name="colorPrimaryDark">@color/primary_color_light_green_dark</item>
         <item name="colorAccent">@color/accent_color_light_green</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.light_green">
@@ -346,6 +397,7 @@
         <item name="colorPrimary">@color/primary_color_light_green</item>
         <item name="colorPrimaryDark">@color/primary_color_light_green_dark</item>
         <item name="colorAccent">@color/accent_color_light_green</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.lime">
@@ -356,6 +408,7 @@
         <item name="colorPrimary">@color/primary_color_lime</item>
         <item name="colorPrimaryDark">@color/primary_color_lime_dark</item>
         <item name="colorAccent">@color/accent_color_lime</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.lime">
@@ -366,6 +419,7 @@
         <item name="colorPrimary">@color/primary_color_lime</item>
         <item name="colorPrimaryDark">@color/primary_color_lime_dark</item>
         <item name="colorAccent">@color/accent_color_lime</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.lime">
@@ -376,6 +430,7 @@
         <item name="colorPrimary">@color/primary_color_lime</item>
         <item name="colorPrimaryDark">@color/primary_color_lime_dark</item>
         <item name="colorAccent">@color/accent_color_lime</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.yellow">
@@ -386,6 +441,7 @@
         <item name="colorPrimary">@color/primary_color_yellow</item>
         <item name="colorPrimaryDark">@color/primary_color_yellow_dark</item>
         <item name="colorAccent">@color/accent_color_yellow</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.yellow">
@@ -396,6 +452,7 @@
         <item name="colorPrimary">@color/primary_color_yellow</item>
         <item name="colorPrimaryDark">@color/primary_color_yellow_dark</item>
         <item name="colorAccent">@color/accent_color_yellow</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.yellow">
@@ -406,6 +463,7 @@
         <item name="colorPrimary">@color/primary_color_yellow</item>
         <item name="colorPrimaryDark">@color/primary_color_yellow_dark</item>
         <item name="colorAccent">@color/accent_color_yellow</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.amber">
@@ -416,6 +474,7 @@
         <item name="colorPrimary">@color/primary_color_amber</item>
         <item name="colorPrimaryDark">@color/primary_color_amber_dark</item>
         <item name="colorAccent">@color/accent_color_amber</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.amber">
@@ -426,6 +485,7 @@
         <item name="colorPrimary">@color/primary_color_amber</item>
         <item name="colorPrimaryDark">@color/primary_color_amber_dark</item>
         <item name="colorAccent">@color/accent_color_amber</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.amber">
@@ -436,6 +496,7 @@
         <item name="colorPrimary">@color/primary_color_amber</item>
         <item name="colorPrimaryDark">@color/primary_color_amber_dark</item>
         <item name="colorAccent">@color/accent_color_amber</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.orange">
@@ -446,6 +507,7 @@
         <item name="colorPrimary">@color/primary_color_orange</item>
         <item name="colorPrimaryDark">@color/primary_color_orange_dark</item>
         <item name="colorAccent">@color/accent_color_orange</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.orange">
@@ -456,6 +518,7 @@
         <item name="colorPrimary">@color/primary_color_orange</item>
         <item name="colorPrimaryDark">@color/primary_color_orange_dark</item>
         <item name="colorAccent">@color/accent_color_orange</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.orange">
@@ -466,6 +529,7 @@
         <item name="colorPrimary">@color/primary_color_orange</item>
         <item name="colorPrimaryDark">@color/primary_color_orange_dark</item>
         <item name="colorAccent">@color/accent_color_orange</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.deep_orange">
@@ -476,6 +540,7 @@
         <item name="colorPrimary">@color/primary_color_deep_orange</item>
         <item name="colorPrimaryDark">@color/primary_color_deep_orange_dark</item>
         <item name="colorAccent">@color/accent_color_deep_orange</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.deep_orange">
@@ -486,6 +551,7 @@
         <item name="colorPrimary">@color/primary_color_deep_orange</item>
         <item name="colorPrimaryDark">@color/primary_color_deep_orange_dark</item>
         <item name="colorAccent">@color/accent_color_deep_orange</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.deep_orange">
@@ -496,6 +562,7 @@
         <item name="colorPrimary">@color/primary_color_deep_orange</item>
         <item name="colorPrimaryDark">@color/primary_color_deep_orange_dark</item>
         <item name="colorAccent">@color/accent_color_deep_orange</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.brown">
@@ -506,6 +573,7 @@
         <item name="colorPrimary">@color/primary_color_brown</item>
         <item name="colorPrimaryDark">@color/primary_color_brown_dark</item>
         <item name="colorAccent">@color/accent_color_brown</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.brown">
@@ -516,6 +584,8 @@
         <item name="colorPrimary">@color/primary_color_brown</item>
         <item name="colorPrimaryDark">@color/primary_color_brown_dark</item>
         <item name="colorAccent">@color/accent_color_brown</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.brown">
@@ -526,6 +596,8 @@
         <item name="colorPrimary">@color/primary_color_brown</item>
         <item name="colorPrimaryDark">@color/primary_color_brown_dark</item>
         <item name="colorAccent">@color/accent_color_brown</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.grey">
@@ -536,6 +608,7 @@
         <item name="colorPrimary">@color/primary_color_grey</item>
         <item name="colorPrimaryDark">@color/primary_color_grey_dark</item>
         <item name="colorAccent">@color/accent_color_grey</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.grey">
@@ -546,6 +619,7 @@
         <item name="colorPrimary">@color/primary_color_grey</item>
         <item name="colorPrimaryDark">@color/primary_color_grey_dark</item>
         <item name="colorAccent">@color/accent_color_grey</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.grey">
@@ -556,6 +630,7 @@
         <item name="colorPrimary">@color/primary_color_grey</item>
         <item name="colorPrimaryDark">@color/primary_color_grey_dark</item>
         <item name="colorAccent">@color/accent_color_grey</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_dark.blue_grey">
@@ -566,6 +641,7 @@
         <item name="colorPrimary">@color/primary_color_blue_grey</item>
         <item name="colorPrimaryDark">@color/primary_color_blue_grey_dark</item>
         <item name="colorAccent">@color/accent_color_blue_grey</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light.blue_grey">
@@ -576,6 +652,8 @@
         <item name="colorPrimary">@color/primary_color_blue_grey</item>
         <item name="colorPrimaryDark">@color/primary_color_blue_grey_dark</item>
         <item name="colorAccent">@color/accent_color_blue_grey</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
+        <item name="button_style">@style/md_button</item>
     </style>
 
     <style name="app_theme_light_d.blue_grey">
@@ -586,6 +664,7 @@
         <item name="colorPrimary">@color/primary_color_blue_grey</item>
         <item name="colorPrimaryDark">@color/primary_color_blue_grey_dark</item>
         <item name="colorAccent">@color/accent_color_blue_grey</item>
+        <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
     </style>
 
     <style name="dialog_theme_dark" parent="@android:style/Theme.Material.Dialog.Alert">
@@ -608,7 +687,8 @@
 
     <style name="fab">
         <item name="android:elevation">@dimen/elevation_low</item>
-        <item name="android:tint">@android:color/white</item>
+        <!--<item name="android:tint">@android:color/white</item>-->
+        <item name="android:tint">?attr/floating_color_for_accent</item>
         <item name="android:stateListAnimator">@animator/fab_elevation</item>
         <item name="android:background">@drawable/fab_oval_ripple</item>
         <item name="android:layout_width">@dimen/fab_diameter</item>
@@ -623,5 +703,12 @@
         <item name="android:textAppearance">?android:attr/textAppearanceListItemSecondary</item>
         <item name="android:typeface">monospace</item>
     </style>
+
+    <style name="md_button">
+        <item name="android:backgroundTint">?attr/colorAccent</item>
+        <item name="android:textColor">?attr/floating_color_for_accent</item>
+    </style>
+
+    <style name="def_button" />
 
 </resources>

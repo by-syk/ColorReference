@@ -29,7 +29,7 @@
         android:layout_height="match_parent"
         android:layout_weight="3.0">
 
-        <RadioGroup
+        <!--<RadioGroup
             android:id="@+id/rg_themes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,11 +59,27 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/rg_themes"
             android:layout_alignLeft="@id/rg_themes"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/view_control_bar" />
+
+            <ViewStub
+                android:id="@+id/vs_ui_board"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.0"
+                android:layout="@layout/view_ui_board" />
+
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/fab_lucky"
-            android:src="@drawable/ic_fab_lucky"
+            android:src="@drawable/ic_fab_random"
             style="@style/fab"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"

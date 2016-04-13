@@ -7,8 +7,10 @@
     <string name="dia_title_help">Help</string>
     <string name="dia_bt_ok">OK</string>
     <string name="dia_bt_got_it">Got it</string>
+    <string name="dia_bt_rate_me">&#x2605; Rate</string>
 
     <string name="menu_reset">Reset</string>
+    <string name="menu_lucky">Lucky</string>
     <string name="menu_about">About</string>
     <string name="menu_help">Help</string>
 
@@ -20,19 +22,27 @@
 
     <!--There are no wrong colors. What matters most is how to use them.-->
     <string name="about_desc">"\"A little rusty on your color theory? Material design makes color easy.\"
+— Google says.
 \nColor Reference helps you choose a nice primary color for your new app.
-\nTo learn more, please visit
+\n> Thank @ToddThink for designing the new launcher icon.
+\n> To learn more, please visit Google's
 https://www.google.com/design/spec/style/color.html
-\nSource code on GitHub:
+\n> To do it online, please visit MaterialUp's
+http://www.materialpalette.com
+\n> Source code on GitHub:
 https://github.com/by-syk/ColorReference
 \nCopyright &#169; 2016 By_syk. All rights reserved."</string>
     <string name="help_desc">"Apps that don’t have existing color schemes may select colors from the material design color palette.
 \nSuggestions:
 \n500 version for primary color, 700 version for dark primary color and A200 for accent color."</string>
+    <!--<string name="board_desc">Tap the CONTROL BAR to show/hide the UI BOARD.</string>-->
 
     <string name="light_theme">Light</string>
     <string name="dark_theme">Dark</string>
     <!--<string name="light_with_dark_theme">Light with dark action bar</string>-->
     <string name="theme">Theme:</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="button">Button</string>
+    <string name="board">UI board</string>
 
 </resources>
