@@ -1,6 +1,6 @@
 v1.0.9
-New launcher icon.
-Add UI BOARD for seeing how color affect widgets.
+New launcher icon. (Thank @ToddThink)
+Add UI BOARD for seeing how color affects widgets.
 
 v1.0.3
 Add Chinese translation partly.
