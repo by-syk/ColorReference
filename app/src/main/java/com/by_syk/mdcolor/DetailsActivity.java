@@ -32,6 +32,14 @@ public class DetailsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /*// Translucent navigation bar
+        // android:fitsSystemWindows="true"
+        if (!getResources().getBoolean(R.bool.is_land)) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }*/
+
         setContentView(R.layout.activity_details);
 
         init();

@@ -41,12 +41,18 @@
 
     </LinearLayout>
 
+    <!--
+        android:backgroundTint="?attr/colorAccent"
+        Lollipop's backgroundTint has no effect on a Button.
+        And it's just ok on API 22+.
+        SO we use another way to tint buttons in API 21+.
+    -->
     <Button
         android:text="@string/button"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="?attr/button_style"
+        android:textColor="?attr/floating_color_for_accent"
         android:layout_below="@id/linear_layout"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/unit_padding"
