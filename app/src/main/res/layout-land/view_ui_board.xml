@@ -18,19 +18,27 @@
             android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/progress_bar1"
             android:layout_alignTop="@id/progress_bar1"
+            android:layout_alignBottom="@id/progress_bar1"
             android:layout_marginLeft="@dimen/unit_padding"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_toRightOf="@id/progress_bar1"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center_vertical">
 
             <ProgressBar
                 android:id="@+id/progress_bar2"
                 style="?android:attr/progressBarStyleHorizontal"
+                android:indeterminate="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar3"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/unit_padding"
                 android:max="100"
                 android:progress="25"
                 android:secondaryProgress="75" />
@@ -39,9 +47,9 @@
                 android:id="@+id/seek_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/unit_padding"
                 android:max="100"
-                android:progress="50" />
+                android:progress="50"
+                android:layout_marginTop="@dimen/unit_padding" />
 
         </LinearLayout>
 
@@ -50,8 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?attr/floating_color_for_accent"
-            android:layout_below="@id/linear_layout"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_below="@id/progress_bar1"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/unit_padding"
             android:text="@string/button" />
@@ -85,14 +92,18 @@
             android:checked="true"
             android:text="@string/checkbox" />
 
-        <!--style="?android:attr/ratingBarStyleSmall"-->
+        <!--
+            style="?android:attr/ratingBarStyleSmall"
+            style="?android:attr/ratingBarStyleIndicator"
+        -->
         <RatingBar
-            android:id="@+id/rating_bar"
+            android:id="@+id/rating_bar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/button"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/unit_padding"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:numStars="5"
             android:rating="3.5" />
 

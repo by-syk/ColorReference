@@ -8,7 +8,7 @@ android {
         applicationId "com.by_syk.mdcolor"
         minSdkVersion 21
         targetSdkVersion 23
-        versionCode 16041400
+        versionCode 16041600
         versionName "1.1.0"
     }
 

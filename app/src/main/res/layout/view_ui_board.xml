@@ -22,14 +22,15 @@
         android:layout_marginLeft="@dimen/unit_padding"
         android:layout_marginRight="@dimen/activity_horizontal_margin">
 
+        <!--android:max="100"
+        android:progress="25"
+        android:secondaryProgress="75"-->
         <ProgressBar
             android:id="@+id/progress_bar2"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="25"
-            android:secondaryProgress="75" />
+            android:indeterminate="true" />
 
         <SeekBar
             android:id="@+id/seek_bar"
