@@ -10,7 +10,6 @@ import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewStub;
 import android.view.animation.AnimationUtils;
@@ -148,13 +147,13 @@ public class MainActivity extends BaseActivity {
                 switchBoard.performClick();
             }
         });
-        viewControlBar.setOnTouchListener(new View.OnTouchListener() {
+        /*viewControlBar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switchBoard.requestFocusFromTouch();
                 return false;
             }
-        });
+        });*/
     }
 
     private void initFAB() {
