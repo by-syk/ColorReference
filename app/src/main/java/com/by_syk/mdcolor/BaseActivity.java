@@ -3,8 +3,8 @@ package com.by_syk.mdcolor;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.by_syk.lib.storage.SP;
 import com.by_syk.mdcolor.util.C;
-import com.by_syk.mdcolor.util.SP;
 
 /**
  * Created by By_syk on 2016-03-31.
@@ -12,31 +12,31 @@ import com.by_syk.mdcolor.util.SP;
 public class BaseActivity extends Activity {
     SP sp = null;
 
-    public final int[] DEFAULT_THEME_ID = { R.style.app_theme_dark,
-            R.style.app_theme_light, R.style.app_theme_light_d };
-    public final int[][] THEMES_ID =  {
-            { R.style.app_theme_dark_red, R.style.app_theme_light_red, R.style.app_theme_light_d_red },
-            { R.style.app_theme_dark_pink, R.style.app_theme_light_pink, R.style.app_theme_light_d_pink },
-            { R.style.app_theme_dark_purple, R.style.app_theme_light_purple, R.style.app_theme_light_d_purple },
-            { R.style.app_theme_dark_deep_purple, R.style.app_theme_light_deep_purple, R.style.app_theme_light_d_deep_purple },
-            { R.style.app_theme_dark_indigo, R.style.app_theme_light_indigo, R.style.app_theme_light_d_indigo },
-            { R.style.app_theme_dark_blue, R.style.app_theme_light_blue, R.style.app_theme_light_d_blue },
-            { R.style.app_theme_dark_light_blue, R.style.app_theme_light_light_blue, R.style.app_theme_light_d_light_blue },
-            { R.style.app_theme_dark_cyan, R.style.app_theme_light_cyan, R.style.app_theme_light_d_cyan },
-            { R.style.app_theme_dark_teal, R.style.app_theme_light_teal, R.style.app_theme_light_d_teal },
-            { R.style.app_theme_dark_green, R.style.app_theme_light_green, R.style.app_theme_light_d_green },
-            { R.style.app_theme_dark_light_green, R.style.app_theme_light_light_green, R.style.app_theme_light_d_light_green },
-            { R.style.app_theme_dark_lime, R.style.app_theme_light_lime, R.style.app_theme_light_d_lime },
-            { R.style.app_theme_dark_yellow, R.style.app_theme_light_yellow, R.style.app_theme_light_d_yellow },
-            { R.style.app_theme_dark_amber, R.style.app_theme_light_amber, R.style.app_theme_light_d_amber },
-            { R.style.app_theme_dark_orange, R.style.app_theme_light_orange, R.style.app_theme_light_d_orange },
-            { R.style.app_theme_dark_deep_orange, R.style.app_theme_light_deep_orange, R.style.app_theme_light_d_deep_orange },
-            { R.style.app_theme_dark_brown, R.style.app_theme_light_brown, R.style.app_theme_light_d_brown },
-            { R.style.app_theme_dark_grey, R.style.app_theme_light_grey, R.style.app_theme_light_d_grey },
-            { R.style.app_theme_dark_blue_grey, R.style.app_theme_light_blue_grey, R.style.app_theme_light_d_blue_grey },
+    public final int[] DEFAULT_THEME_ID = {R.style.app_theme_dark,
+            R.style.app_theme_light, R.style.app_theme_light_d};
+    public final int[][] THEMES_ID = {
+            {R.style.app_theme_dark_red, R.style.app_theme_light_red, R.style.app_theme_light_d_red},
+            {R.style.app_theme_dark_pink, R.style.app_theme_light_pink, R.style.app_theme_light_d_pink},
+            {R.style.app_theme_dark_purple, R.style.app_theme_light_purple, R.style.app_theme_light_d_purple},
+            {R.style.app_theme_dark_deep_purple, R.style.app_theme_light_deep_purple, R.style.app_theme_light_d_deep_purple},
+            {R.style.app_theme_dark_indigo, R.style.app_theme_light_indigo, R.style.app_theme_light_d_indigo},
+            {R.style.app_theme_dark_blue, R.style.app_theme_light_blue, R.style.app_theme_light_d_blue},
+            {R.style.app_theme_dark_light_blue, R.style.app_theme_light_light_blue, R.style.app_theme_light_d_light_blue},
+            {R.style.app_theme_dark_cyan, R.style.app_theme_light_cyan, R.style.app_theme_light_d_cyan},
+            {R.style.app_theme_dark_teal, R.style.app_theme_light_teal, R.style.app_theme_light_d_teal},
+            {R.style.app_theme_dark_green, R.style.app_theme_light_green, R.style.app_theme_light_d_green},
+            {R.style.app_theme_dark_light_green, R.style.app_theme_light_light_green, R.style.app_theme_light_d_light_green},
+            {R.style.app_theme_dark_lime, R.style.app_theme_light_lime, R.style.app_theme_light_d_lime},
+            {R.style.app_theme_dark_yellow, R.style.app_theme_light_yellow, R.style.app_theme_light_d_yellow},
+            {R.style.app_theme_dark_amber, R.style.app_theme_light_amber, R.style.app_theme_light_d_amber},
+            {R.style.app_theme_dark_orange, R.style.app_theme_light_orange, R.style.app_theme_light_d_orange},
+            {R.style.app_theme_dark_deep_orange, R.style.app_theme_light_deep_orange, R.style.app_theme_light_d_deep_orange},
+            {R.style.app_theme_dark_brown, R.style.app_theme_light_brown, R.style.app_theme_light_d_brown},
+            {R.style.app_theme_dark_grey, R.style.app_theme_light_grey, R.style.app_theme_light_d_grey},
+            {R.style.app_theme_dark_blue_grey, R.style.app_theme_light_blue_grey, R.style.app_theme_light_d_blue_grey},
     };
-    public final int[] DIALOG_THEME_ID = { R.style.dialog_theme_dark,
-            R.style.dialog_theme_light, R.style.dialog_theme_light };
+    public final int[] DIALOG_THEME_ID = {R.style.dialog_theme_dark,
+            R.style.dialog_theme_light, R.style.dialog_theme_light};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

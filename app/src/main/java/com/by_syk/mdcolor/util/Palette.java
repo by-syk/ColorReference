@@ -29,6 +29,10 @@ public class Palette implements Serializable {
             "A100", "A200", "A400", "A700"
     };
 
+    private int primary_color_order = 5;
+    private int dark_primary_color_order = 7;
+    private int accent_color_order = 11;
+
     private int size = NUM;
 
     public Palette() {}
@@ -85,8 +89,21 @@ public class Palette implements Serializable {
     /**
      * @param csvData Like:
      *                Red,
-     *                #FFEBEE,#000000,#FFCDD2,#000000,#EF9A9A,#000000,#E57373,#000000,#EF5350,#FFFFFF,#F44336,#FFFFFF,#E53935,#FFFFFF,#D32F2F,#FFFFFF,#C62828,#FFFFFF,#B71C1C,#FFFFFF,
-     *                #FF8A80,#000000,#FF5252,#FFFFFF,#FF1744,#FFFFFF,#D50000,#FFFFFF
+     *                6,8,12,
+     *                #FFEBEE,#000000,
+     *                #FFCDD2,#000000,
+     *                #EF9A9A,#000000,
+     *                #E57373,#000000,
+     *                #EF5350,#FFFFFF,
+     *                #F44336,#FFFFFF,
+     *                #E53935,#FFFFFF,
+     *                #D32F2F,#FFFFFF,
+     *                #C62828,#FFFFFF,
+     *                #B71C1C,#FFFFFF,
+     *                #FF8A80,#000000,
+     *                #FF5252,#FFFFFF,
+     *                #FF1744,#FFFFFF,
+     *                #D50000,#FFFFFF
      */
     public boolean setAll(String csvData) {
         if (TextUtils.isEmpty(csvData)) {
@@ -98,12 +115,16 @@ public class Palette implements Serializable {
         setName(data[0]);
 
         try {
-            for (int i = 1, len = data.length; i < len; i += 2) {
-                colors[(i - 1) / 2] = Color.parseColor(data[i]);
-                colors_floating_text[(i - 1) / 2] = Color.parseColor(data[i + 1]);
+            primary_color_order = Integer.parseInt(data[1]) - 1;
+            dark_primary_color_order = Integer.parseInt(data[2]) - 1;
+            accent_color_order = Integer.parseInt(data[3]) - 1;
+
+            for (int i = 4, len = data.length; i < len; i += 2) {
+                colors[(i - 4) / 2] = Color.parseColor(data[i]);
+                colors_floating_text[(i - 4) / 2] = Color.parseColor(data[i + 1]);
             }
 
-            size = (data.length - 1) / 2;
+            size = (data.length - 4) / 2;
 
             return true;
         } catch (IllegalArgumentException e) {
@@ -191,15 +212,27 @@ public class Palette implements Serializable {
     }
 
     public int getPrimaryColor() {
-        return getColor(500);
+        return getColor(primary_color_order);
     }
 
-    /*public int getPrimaryDarkColor() {
-        return getColor(700);
-    }*/
-
     public String getPrimaryColorStr() {
-        return getColorStr(500);
+        return getColorStr(primary_color_order);
+    }
+
+    public int getDarkPrimaryColor() {
+        return getColor(dark_primary_color_order);
+    }
+
+    public String getDarkPrimaryColorStr() {
+        return getColorStr(dark_primary_color_order);
+    }
+
+    public int getAccentColor() {
+        return getColor(accent_color_order);
+    }
+
+    public String getAccentColorStr() {
+        return getColorStr(accent_color_order);
     }
 
     public int getSize() {
@@ -207,7 +240,7 @@ public class Palette implements Serializable {
     }
 
     /**
-     * 以颜色深度500为准
+     * 以色调500为准
      * 避免背景与文字对比度不高，若主题为 Theme.Material 则忽略此建议
      * @return false - Theme.Material.Light
      *         true - Theme.Material.Light.DarkActionBar
@@ -217,15 +250,16 @@ public class Palette implements Serializable {
     }
 
     /**
-     * 500、700、A200
+     * 500、700、A200(A400)
      */
-    public boolean isSuggestedGrade(int i) {
+    public boolean isSuggestedHue(int i) {
         int order = getArrOrder(i);
 
         if (i < 0) {
             return false;
         }
 
-        return order == 5 || order == 7 /*|| order == 8*/ || order == 11;
+        return order == primary_color_order || order == dark_primary_color_order
+                || order == accent_color_order;
     }
 }

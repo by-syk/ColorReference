@@ -1,3 +1,7 @@
+v1.1.1
+No screen flicker while switching colors.
+Support for tablets more better.
+
 v1.1.0
 Fix: failed to tint buttons on Lollipop.
 

@@ -4,7 +4,7 @@
     <color name="floating_color_for_accent_white">#ffffff</color>
     <color name="floating_color_for_accent_black">#1c1c1c</color>
 
-    <color name="md_primary_black">#1b1c07</color>
+    <color name="md_primary_black">#de000000</color>
     <color name="md_primary_white">#ffffff</color>
 
     <color name="primary_color_red">#f44336</color>
@@ -53,11 +53,11 @@
 
     <color name="primary_color_lime">#cddc39</color>
     <color name="primary_color_lime_dark">#afb42b</color>
-    <color name="accent_color_lime">#eeff41</color>
+    <color name="accent_color_lime">#c6ff00</color>
 
     <color name="primary_color_yellow">#ffeb3b</color>
     <color name="primary_color_yellow_dark">#fbc02d</color>
-    <color name="accent_color_yellow">#ffff00</color>
+    <color name="accent_color_yellow">#ffea00</color>
 
     <color name="primary_color_amber">#ffc107</color>
     <color name="primary_color_amber_dark">#ffa000</color>

@@ -22,9 +22,9 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.by_syk.lib.toast.GlobalToast;
 import com.by_syk.mdcolor.util.C;
 import com.by_syk.mdcolor.util.ExtraUtil;
-import com.by_syk.mdcolor.util.GlobalToast;
 import com.by_syk.mdcolor.util.MyAdapter;
 import com.by_syk.mdcolor.util.Palette;
 
@@ -45,6 +45,10 @@ public class MainActivity extends BaseActivity {
 
     private MyAdapter myAdapter = null;
 
+    private boolean is_fab_showed = false;
+
+    private static Handler handler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +57,25 @@ public class MainActivity extends BaseActivity {
         init();
 
         (new LoadColorsTask()).execute();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        if (!is_fab_showed && hasFocus) {
+            // Wait for 8 frames.
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    fabLucky.setVisibility(View.VISIBLE);
+                    fabLucky.setAnimation(AnimationUtils
+                            .loadAnimation(MainActivity.this, R.anim.fab_bottom_in));
+                }
+            }, 134);
+
+            is_fab_showed = true;
+        }
     }
 
     private void init() {
@@ -192,8 +215,8 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        fabLucky.setVisibility(View.VISIBLE);
-        fabLucky.setAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.fab_bottom_in));
+        //fabLucky.setVisibility(View.VISIBLE);
+        //fabLucky.setAnimation(AnimationUtils.loadAnimation(this, R.anim.fab_bottom_in));
     }
 
     /*private void showTips() {
@@ -296,26 +319,16 @@ public class MainActivity extends BaseActivity {
     }
 
     private void changeTheme() {
-        recreate();
+        // Shine!!!
+        //recreate();
 
-        //reload();
-    }
-
-    /*private void reload() {
-        Intent intent = getIntent();
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-
+        startActivity(new Intent(this, MainActivity.class));
         finish();
-
-        // No animation.
-        overridePendingTransition(0, 0);
-
-        startActivity(intent);
-    }*/
+    }
 
     private void aboutDialog() {
         SpannableString message = ExtraUtil
-                .getLinkableDialogMessage(getString(R.string.about_desc));
+                .getLinkableMessage(this, getString(R.string.about_desc));
 
         AlertDialog alertDialog = getDialogBuilder()
                 .setTitle(R.string.dia_title_about)
@@ -361,7 +374,7 @@ public class MainActivity extends BaseActivity {
 
                 GlobalToast.showToast(this, R.string.toast_reset);
 
-                (new Handler()).postDelayed(new Runnable() {
+                handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         // Instead of this:

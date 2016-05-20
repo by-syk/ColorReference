@@ -20,5 +20,8 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="unit_padding">8dp</dimen>
+    <dimen name="double_unit_padding">16dp</dimen>
+
+    <dimen name="control_bar">56dp</dimen>
 
 </resources>

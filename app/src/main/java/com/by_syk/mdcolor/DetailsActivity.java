@@ -15,8 +15,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.by_syk.lib.toast.GlobalToast;
 import com.by_syk.mdcolor.util.C;
-import com.by_syk.mdcolor.util.GlobalToast;
 import com.by_syk.mdcolor.util.GradesAdapter;
 import com.by_syk.mdcolor.util.Palette;
 
@@ -95,7 +95,7 @@ public class DetailsActivity extends BaseActivity {
     private void helpDialog() {
         String message = getString(R.string.help_desc);
 
-        // Add underlines for words: 500, 700, A200.
+        // Add underlines for words: 500, 700, A200, A400.
         SpannableString spannableString = new SpannableString(message);
         int index = message.indexOf("500");
         //new ForegroundColorSpan(palette.getColor(500))
@@ -105,6 +105,9 @@ public class DetailsActivity extends BaseActivity {
         spannableString.setSpan(new UnderlineSpan(), index, index + 3,
                 Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         index = message.indexOf("A200");
+        spannableString.setSpan(new UnderlineSpan(), index, index + 4,
+                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        index = message.indexOf("A400");
         spannableString.setSpan(new UnderlineSpan(), index, index + 4,
                 Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
 

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/view_control_bar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/control_bar"
     android:orientation="horizontal"
     android:gravity="center_vertical"
     android:clickable="true"
@@ -12,9 +12,7 @@
         android:id="@+id/switch_board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin" />
+        android:layout_marginLeft="@dimen/activity_horizontal_margin" />
 
     <RadioGroup
         android:id="@+id/rg_themes"
@@ -22,8 +20,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="@dimen/unit_padding"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin">
 
         <RadioButton

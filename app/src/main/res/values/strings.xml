@@ -26,15 +26,15 @@
 \nColor Reference helps you choose a nice primary color for your new app.
 \n> Thank @ToddThink for designing the new launcher icon.
 \n> To learn more, please visit Google's
-https://www.google.com/design/spec/style/color.html
+[https://www.google.com/design/spec/style/color.html](https://www.google.com/design/spec/style/color.html)
 \n> To do it online, please visit MaterialUp's
-http://www.materialpalette.com
+[http://www.materialpalette.com](http://www.materialpalette.com)
 \n> Source code on GitHub:
-https://github.com/by-syk/ColorReference
+[https://github.com/by-syk/ColorReference](https://github.com/by-syk/ColorReference)
 \nCopyright &#169; 2016 By_syk. All rights reserved."</string>
     <string name="help_desc">"Apps that don’t have existing color schemes may select colors from the material design color palette.
 \nSuggestions:
-\n500 version for primary color, 700 version for dark primary color and A200 for accent color."</string>
+\n500 version for primary color, 700 version for dark primary color and A200 (or A400) for accent color."</string>
     <!--<string name="board_desc">Tap the CONTROL BAR to show/hide the UI BOARD.</string>-->
 
     <string name="light_theme">Light</string>

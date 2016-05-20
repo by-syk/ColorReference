@@ -89,7 +89,7 @@ public class GradesAdapter extends BaseAdapter {
         viewHolder.tvGrade.setTextColor(floating_text_color);
         viewHolder.tvHex.setTextColor(floating_text_color);
 
-        if (palette.isSuggestedGrade(position)) {
+        if (palette.isSuggestedHue(position)) {
             viewHolder.ivStar.setVisibility(View.VISIBLE);
 
             // Create new Drawable to avoid star color error.
