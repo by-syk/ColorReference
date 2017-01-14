@@ -1,4 +1,4 @@
-![icon.png](icon.png)
+![icon.png](art/icon.png)
 
 # Color Reference - Material color palette
 
@@ -10,7 +10,7 @@
    
 **Color Reference** helps you choose a nice primary color for your new Android app.
 
-![screenshot.png](screenshot.png)
+![screenshot.png](art/screenshot.png)
 
 * To learn more, please visit Google's   
 [https://www.google.com/design/spec/style/color.html](https://www.google.com/design/spec/style/color.html "Material design - Color")
