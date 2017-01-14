@@ -30,7 +30,7 @@ import android.widget.ListView;
 import com.by_syk.lib.toast.GlobalToast;
 import com.by_syk.mdcolor.fragment.HelpDialog;
 import com.by_syk.mdcolor.util.C;
-import com.by_syk.mdcolor.util.GradesAdapter;
+import com.by_syk.mdcolor.util.adapter.GradesAdapter;
 import com.by_syk.mdcolor.util.Palette;
 
 /**

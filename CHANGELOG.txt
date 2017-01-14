@@ -1,5 +1,6 @@
 v1.1.4
 - Add notification test.
+- Adjust 3 default accent colors.
 - Fix: Reset issue.
 - Fix: The item color of list is wrong.
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.by_syk.mdcolor.util;
+package com.by_syk.mdcolor.util.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -27,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.by_syk.mdcolor.R;
+import com.by_syk.mdcolor.util.Palette;
 
 /**
  * Created by By_syk on 2016-04-01.

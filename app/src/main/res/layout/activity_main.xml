@@ -69,7 +69,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_fab_random"
+        android:src="@drawable/ic_fab_touch"
         android:visibility="gone" />
 
 </RelativeLayout>

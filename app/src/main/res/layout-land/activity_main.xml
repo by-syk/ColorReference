@@ -96,7 +96,7 @@
 
         <ImageButton
             android:id="@+id/fab_lucky"
-            android:src="@drawable/ic_fab_random"
+            android:src="@drawable/ic_fab_touch"
             style="@style/Fab"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"

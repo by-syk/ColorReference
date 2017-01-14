@@ -45,7 +45,7 @@
 \n> To learn more, please visit Google's
 [https://www.google.com/design/spec/style/color.html](https://www.google.com/design/spec/style/color.html)
 \n> To do it online, please visit MaterialUp's
-[http://www.materialpalette.com](http://www.materialpalette.com)
+[https://www.materialpalette.com](https://www.materialpalette.com)
 \n> Source code on GitHub:
 [https://github.com/by-syk/ColorReference](https://github.com/by-syk/ColorReference)
 \nCopyright &#169; 2016-2017 By_syk. All rights reserved."</string>
@@ -62,6 +62,6 @@
     <string name="button">Button</string>
     <string name="board">UI board</string>
     <string name="notify_title">Color Reference</string>
-    <string name="notify_content">Test notification.</string>
+    <string name="notify_content">Notification test.</string>
 
 </resources>

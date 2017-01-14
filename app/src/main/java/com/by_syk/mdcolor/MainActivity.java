@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,7 +40,7 @@ import android.widget.Switch;
 import com.by_syk.lib.toast.GlobalToast;
 import com.by_syk.mdcolor.fragment.AboutDialog;
 import com.by_syk.mdcolor.util.C;
-import com.by_syk.mdcolor.util.MainAdapter;
+import com.by_syk.mdcolor.util.adapter.MainAdapter;
 import com.by_syk.mdcolor.util.Palette;
 
 import java.io.BufferedReader;
@@ -52,14 +53,11 @@ import java.util.Random;
 public class MainActivity extends BaseActivity {
     private ListView lvColors;
     private Switch switchBoard;
-    private RadioGroup radioGroup;
     private View viewControlBar;
     private View viewUIBoard;
     private ImageButton fabLucky;
 
     private MainAdapter mainAdapter = null;
-
-    private boolean isFabShowed = false;
 
     private NotificationManager notificationManager;
 
@@ -76,40 +74,36 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        Log.d(C.LOG_TAG, "onPostCreate");
+
+        super.onPostCreate(savedInstanceState);
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fabLucky.setVisibility(View.VISIBLE);
+                fabLucky.setAnimation(AnimationUtils
+                        .loadAnimation(MainActivity.this, R.anim.fab_bottom_in));
+            }
+        }, 134);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
 
         cancelNotification();
     }
 
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-
-        if (!isFabShowed && hasFocus) {
-            // Wait for 8 frames.
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    fabLucky.setVisibility(View.VISIBLE);
-                    fabLucky.setAnimation(AnimationUtils
-                            .loadAnimation(MainActivity.this, R.anim.fab_bottom_in));
-                }
-            }, 134);
-
-            isFabShowed = true;
-        }
-    }
-
     private void init() {
-        lvColors = (ListView) findViewById(R.id.lv_colors);
-        radioGroup = (RadioGroup) findViewById(R.id.rg_themes);
         viewControlBar = findViewById(R.id.view_control_bar);
         switchBoard = (Switch) findViewById(R.id.switch_board);
         fabLucky = (ImageButton) findViewById(R.id.fab_lucky);
 
         // Sets the data behind the ListView.
         mainAdapter = new MainAdapter(this, sp.getInt(C.SP_THEME_COLOR, -1));
+        lvColors = (ListView) findViewById(R.id.lv_colors);
         lvColors.setAdapter(mainAdapter);
 
         //lvColors.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
@@ -134,6 +128,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rg_themes);
         radioGroup.check(switchRadioButtonOrderAndId(sp.getInt(C.SP_THEME_STYLE)));
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

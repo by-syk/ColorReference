@@ -27,6 +27,7 @@
         android:id="@+id/iv_head"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:scaleType="center"
         android:layout_marginStart="@dimen/list_margin_fix_ic"
         android:layout_centerVertical="true" />
 
