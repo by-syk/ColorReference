@@ -24,18 +24,18 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
 
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_toRightOf="@id/progress_bar1"
+        android:layout_toEndOf="@id/progress_bar1"
         android:layout_alignTop="@id/progress_bar1"
         android:layout_alignBottom="@id/progress_bar1"
-        android:layout_marginLeft="@dimen/double_unit_padding"
-        android:layout_marginRight="@dimen/activity_horizontal_margin">
+        android:layout_marginStart="@dimen/double_unit_padding"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin">
 
         <ProgressBar
             android:id="@+id/progress_bar2"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:textColor="?attr/floating_color_for_accent"
         android:layout_below="@id/linear_layout"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/unit_padding"
         android:layout_marginBottom="@dimen/activity_vertical_margin" />
 
@@ -73,16 +73,16 @@
         android:textColor="?attr/floating_color_for_accent"
         android:enabled="false"
         android:layout_alignBaseline="@id/button1"
-        android:layout_marginLeft="@dimen/unit_padding"
-        android:layout_toRightOf="@id/button1" />
+        android:layout_marginStart="@dimen/unit_padding"
+        android:layout_toEndOf="@id/button1" />
 
     <CheckBox
         android:id="@+id/check_box1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/button1"
-        android:layout_marginLeft="@dimen/unit_padding"
-        android:layout_toRightOf="@id/button2"
+        android:layout_marginStart="@dimen/unit_padding"
+        android:layout_toEndOf="@id/button2"
         android:checked="false" />
 
     <CheckBox
@@ -90,8 +90,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/button1"
-        android:layout_marginLeft="@dimen/unit_padding"
-        android:layout_toRightOf="@id/check_box1"
+        android:layout_marginStart="@dimen/unit_padding"
+        android:layout_toEndOf="@id/check_box1"
         android:checked="false"
         android:enabled="false" />
 
@@ -100,8 +100,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/button1"
-        android:layout_marginLeft="@dimen/unit_padding"
-        android:layout_toRightOf="@id/check_box2"
+        android:layout_marginStart="@dimen/unit_padding"
+        android:layout_toEndOf="@id/check_box2"
         android:checked="true"
         android:enabled="false" />
 
@@ -110,8 +110,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/button1"
-        android:layout_marginLeft="@dimen/unit_padding"
-        android:layout_toRightOf="@id/check_box3"
+        android:layout_marginStart="@dimen/unit_padding"
+        android:layout_toEndOf="@id/check_box3"
         android:checked="true"
         android:text="@string/checkbox" />
 

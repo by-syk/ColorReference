@@ -9,7 +9,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 17011400
-        versionName "1.1.2.nightly"
+        versionName "1.1.4"
     }
 
     buildTypes {

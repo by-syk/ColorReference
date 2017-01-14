@@ -27,8 +27,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -40,7 +40,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
                 android:orientation="vertical">
 
                 <ProgressBar
@@ -72,8 +72,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/unit_padding"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -87,7 +87,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
                 android:enabled="false"
                 android:text="@string/button"
                 android:textColor="?attr/floating_color_for_accent" />
@@ -95,27 +95,27 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
                 android:checked="false" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
                 android:checked="false"
                 android:enabled="false" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
                 android:checked="true"
                 android:enabled="false" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
                 android:checked="true"
                 android:text="@string/checkbox" />
 
@@ -125,8 +125,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/unit_padding"
             android:orientation="horizontal"
             android:gravity="center_vertical">
@@ -143,7 +143,7 @@
                 android:numStars="5"
                 android:rating="3.5"
                 style="?android:attr/ratingBarStyleSmall"
-                android:layout_marginLeft="@dimen/unit_padding" />
+                android:layout_marginStart="@dimen/unit_padding" />
 
         </LinearLayout>
 

@@ -115,8 +115,9 @@ public class MainAdapter extends BaseAdapter {
         Drawable drawable = context.getDrawable(position == checked
                 ? R.drawable.ic_head_checked : R.drawable.ic_head);
         viewHolder.ivHead.setImageDrawable(drawable);
-        viewHolder.ivHead.getDrawable().setTint(palette.getPrimaryColor());
-        //viewHolder.ivHead.setColorFilter(palette.getPrimaryColor());
+        // BUG：由于用了缓存，这样变色会导致颜色错乱
+        //viewHolder.ivHead.getDrawable().setTint(palette.getPrimaryColor());
+        viewHolder.ivHead.setColorFilter(palette.getPrimaryColor());
 
         return convertView;
     }

@@ -42,13 +42,13 @@
             android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/list_item_title" />
+            style="@style/ListItemTitle" />
 
         <TextView
             android:id="@+id/tv_hex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/list_item_subtitle" />
+            style="@style/ListItemSubtitle" />
 
     </LinearLayout>
 

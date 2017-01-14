@@ -25,10 +25,11 @@
     <string name="dlg_bt_got_it">Got it</string>
     <string name="dlg_bt_rate_me">&#x2605; Rate</string>
 
-    <string name="menu_reset">Reset</string>
-    <string name="menu_lucky">Lucky</string>
+    <string name="menu_notification">Notification</string>
+    <string name="menu_reset">Reset theme</string>
     <string name="menu_about">About</string>
     <string name="menu_help">Help</string>
+    <string name="menu_lucky">Lucky</string>
 
     <string name="toast_tap_again_details">Tap again to view details.</string>
     <string name="toast_copied">Copied to clipboard: %1$s</string>
@@ -60,5 +61,7 @@
     <string name="checkbox">CheckBox</string>
     <string name="button">Button</string>
     <string name="board">UI board</string>
+    <string name="notify_title">Color Reference</string>
+    <string name="notify_content">Test notification.</string>
 
 </resources>

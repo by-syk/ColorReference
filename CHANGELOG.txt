@@ -1,23 +1,25 @@
-v?
-Fix: Reset issue.
+v1.1.4
+- Add notification test.
+- Fix: Reset issue.
+- Fix: The item color of list is wrong.
 
 v1.1.1
-No screen flicker while switching colors.
-Support for tablets more better.
+- No screen flicker while switching colors.
+- Support for tablets more better.
 
 v1.1.0
-Fix: failed to tint buttons on Lollipop.
+- Fix: failed to tint buttons on Lollipop.
 
 v1.0.9
-New launcher icon. (Thank @ToddThink)
-Add UI BOARD for seeing how color affects widgets.
+- New launcher icon. (Thank @ToddThink)
+- Add UI BOARD for seeing how color affects widgets.
 
 v1.0.3
-Add Chinese translation partly.
-Fix: star color error.
+- Add Chinese translation partly.
+- Fix: star color error.
 
 v1.0.1
-New launcher icon.
+- New launcher icon.
 
 v1.0.0
-First release.
+- First release.

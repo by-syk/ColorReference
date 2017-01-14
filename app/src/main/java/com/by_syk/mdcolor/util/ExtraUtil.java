@@ -28,12 +28,12 @@ public class ExtraUtil {
     /**
      * Go to app market to view details of this app.
      *
-     * @param via_browser Whether view via browser or client app.
+     * @param viaBrowser Whether view via browser or client app.
      */
-    public static void gotoMarket(Context context, boolean via_browser) {
+    public static void gotoMarket(Context context, boolean viaBrowser) {
         String packageName = context.getPackageName();
 
-        final String LINK = String.format((via_browser
+        final String LINK = String.format((viaBrowser
                 ? "https://play.google.com/store/apps/details?id=%s"
                 : "market://details?id=%s"), packageName);
 
@@ -45,7 +45,7 @@ public class ExtraUtil {
         } catch (ActivityNotFoundException e) {
             e.printStackTrace();
 
-            if (!via_browser) {
+            if (!viaBrowser) {
                 gotoMarket(context, true);
             }
         }

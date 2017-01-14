@@ -38,7 +38,7 @@
                 android:id="@+id/tv_grade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/list_item_title" />
+                style="@style/ListItemTitle" />
 
             <TextView
                 android:id="@+id/tv_hex"
@@ -46,14 +46,14 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceListItemSecondary"
                 android:layout_below="@id/tv_grade"
-                style="@style/list_item_subtitle" />
+                style="@style/ListItemSubtitle" />
 
             <!--android:src="@drawable/ic_star"-->
             <ImageView
                 android:id="@+id/iv_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:visibility="gone" />
 

@@ -28,15 +28,15 @@
         android:id="@+id/switch_board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
 
     <RadioGroup
         android:id="@+id/rg_themes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginLeft="@dimen/unit_padding"
-        android:layout_marginRight="@dimen/activity_horizontal_margin">
+        android:layout_marginStart="@dimen/unit_padding"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin">
 
         <RadioButton
             android:id="@+id/rb_dark_theme"
@@ -48,7 +48,7 @@
             android:id="@+id/rb_light_theme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/unit_padding"
+            android:layout_marginStart="@dimen/unit_padding"
             android:text="@string/light_theme" />
 
     </RadioGroup>

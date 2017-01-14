@@ -39,15 +39,15 @@ public class Palette implements Serializable {
      * 共11个或14个
      * 背景之上的建议文字颜色
      */
-    private int[] colors_floating_text = new int[NUM];
+    private int[] colorsFloatingText = new int[NUM];
     // The name of color versions
     private String[] gradeNames = {"50", "100", "200", "300", "400", "500", "600", "700", "800", "900",
             "A100", "A200", "A400", "A700"
     };
 
-    private int primary_color_order = 5;
-    private int dark_primary_color_order = 7;
-    private int accent_color_order = 11;
+    private int primaryColorOrder = 5;
+    private int darkPrimaryColorOrder = 7;
+    private int accentColorOrder = 11;
 
     private int size = NUM;
 
@@ -131,13 +131,13 @@ public class Palette implements Serializable {
         setName(data[0]);
 
         try {
-            primary_color_order = Integer.parseInt(data[1]) - 1;
-            dark_primary_color_order = Integer.parseInt(data[2]) - 1;
-            accent_color_order = Integer.parseInt(data[3]) - 1;
+            primaryColorOrder = Integer.parseInt(data[1]) - 1;
+            darkPrimaryColorOrder = Integer.parseInt(data[2]) - 1;
+            accentColorOrder = Integer.parseInt(data[3]) - 1;
 
             for (int i = 4, len = data.length; i < len; i += 2) {
                 colors[(i - 4) / 2] = Color.parseColor(data[i]);
-                colors_floating_text[(i - 4) / 2] = Color.parseColor(data[i + 1]);
+                colorsFloatingText[(i - 4) / 2] = Color.parseColor(data[i + 1]);
             }
 
             size = (data.length - 4) / 2;
@@ -176,7 +176,7 @@ public class Palette implements Serializable {
         size = colors.length;
 
         for (int i = 0; i < size; ++i) {
-            colors_floating_text[i] = Color.WHITE;
+            colorsFloatingText[i] = Color.WHITE;
         }
 
         return true;
@@ -214,7 +214,7 @@ public class Palette implements Serializable {
             return Color.WHITE;
         }
 
-        return colors_floating_text[order];
+        return colorsFloatingText[order];
     }
 
     public String getGradeName(int i) {
@@ -228,27 +228,27 @@ public class Palette implements Serializable {
     }
 
     public int getPrimaryColor() {
-        return getColor(primary_color_order);
+        return getColor(primaryColorOrder);
     }
 
     public String getPrimaryColorStr() {
-        return getColorStr(primary_color_order);
+        return getColorStr(primaryColorOrder);
     }
 
     public int getDarkPrimaryColor() {
-        return getColor(dark_primary_color_order);
+        return getColor(darkPrimaryColorOrder);
     }
 
     public String getDarkPrimaryColorStr() {
-        return getColorStr(dark_primary_color_order);
+        return getColorStr(darkPrimaryColorOrder);
     }
 
     public int getAccentColor() {
-        return getColor(accent_color_order);
+        return getColor(accentColorOrder);
     }
 
     public String getAccentColorStr() {
-        return getColorStr(accent_color_order);
+        return getColorStr(accentColorOrder);
     }
 
     public int getSize() {
@@ -275,7 +275,7 @@ public class Palette implements Serializable {
             return false;
         }
 
-        return order == primary_color_order || order == dark_primary_color_order
-                || order == accent_color_order;
+        return order == primaryColorOrder || order == darkPrimaryColorOrder
+                || order == accentColorOrder;
     }
 }

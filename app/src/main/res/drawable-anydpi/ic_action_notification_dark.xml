@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2016-2017 By_syk
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,16 +14,14 @@
   limitations under the License.
   -->
 
-<resources>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportHeight="24.0"
+    android:viewportWidth="24.0">
 
-    <attr name="colorPrimary" format="color" />
-    <attr name="colorPrimaryDark" format="color" />
-    <attr name="colorAccent" format="color" />
+    <path
+        android:fillColor="#ffffffff"
+        android:pathData="M12,22c1.1,0 2,-0.9 2,-2h-4c0,1.1 0.89,2 2,2zM18,16v-5c0,-3.07 -1.64,-5.64 -4.5,-6.32L13.5,4c0,-0.83 -0.67,-1.5 -1.5,-1.5s-1.5,0.67 -1.5,1.5v0.68C7.63,5.36 6,7.92 6,11v5l-2,2v1h16v-1l-2,-2z" />
 
-    <attr name="floating_color_for_accent" format="color" />
-    <attr name="list_item_divider" format="reference" />
-
-    <attr name="ic_menu_notification" format="reference" />
-    <attr name="ic_menu_help" format="reference" />
-
-</resources>
+</vector>

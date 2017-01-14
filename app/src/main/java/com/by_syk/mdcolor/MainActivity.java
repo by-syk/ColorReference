@@ -16,10 +16,14 @@
 
 package com.by_syk.mdcolor;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,7 +59,10 @@ public class MainActivity extends BaseActivity {
 
     private MainAdapter mainAdapter = null;
 
-    private boolean is_fab_showed = false;
+    private boolean isFabShowed = false;
+
+    private NotificationManager notificationManager;
+    private Notification notification;
 
     private static Handler handler = new Handler();
 
@@ -73,7 +80,7 @@ public class MainActivity extends BaseActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        if (!is_fab_showed && hasFocus) {
+        if (!isFabShowed && hasFocus) {
             // Wait for 8 frames.
             handler.postDelayed(new Runnable() {
                 @Override
@@ -84,7 +91,7 @@ public class MainActivity extends BaseActivity {
                 }
             }, 134);
 
-            is_fab_showed = true;
+            isFabShowed = true;
         }
     }
 
@@ -329,6 +336,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void changeTheme() {
+        cancelNotification();
+
         // Shine!!!
         //recreate();
 
@@ -336,16 +345,50 @@ public class MainActivity extends BaseActivity {
         finish();
     }
 
+    private void showNotification() {
+        TypedValue typedValue = new TypedValue();
+        getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
+        int primaryColor = typedValue.data;
+
+        Notification.Builder builder = new Notification.Builder(this)
+                .setSmallIcon(R.drawable.ic_notify_pantone)
+                //.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                .setColor(primaryColor)
+                .setPriority(Notification.PRIORITY_LOW)
+                .setAutoCancel(true)
+                .setFullScreenIntent(PendingIntent.getActivity(this, 0, new Intent(), 0), false);
+        if (C.SDK >= 24) {
+            builder.setContentTitle(getString(R.string.notify_content));
+        } else {
+            builder.setContentTitle(getString(R.string.notify_title));
+            builder.setContentText(getString(R.string.notify_content));
+        }
+        notification = builder.build();
+
+        if (notificationManager == null) {
+            notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        }
+        notificationManager.notify(1, notification);
+    }
+
+    private void cancelNotification() {
+        if (notificationManager != null) {
+            notificationManager.cancel(1);
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menu_notification:
+                showNotification();
+                return true;
             case R.id.menu_reset: {
                 sp.delete(C.SP_THEME_COLOR);
                 sp.delete(C.SP_THEME_STYLE);
