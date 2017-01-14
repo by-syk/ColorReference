@@ -21,7 +21,7 @@
     <color name="floating_color_for_accent_black">#1c1c1c</color>
 
     <color name="md_primary_black">#de000000</color>
-    <color name="md_primary_white">#ffffff</color>
+    <color name="md_primary_white">#ffffffff</color>
 
     <color name="primary_color_red">#f44336</color>
     <color name="primary_color_red_dark">#d32f2f</color>
