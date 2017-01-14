@@ -8,6 +8,8 @@ import android.os.Build;
 public class C {
     public final static int SDK = Build.VERSION.SDK_INT;
 
+    public final static String LOG_TAG = "COLOR_REFERENCE";
+
     public final static String SP_THEME_COLOR = "theme_color";
     public final static String SP_THEME_STYLE = "theme_style";
     public final static String SP_WITH_DARK_AB = "theme_style_light_with_dark";

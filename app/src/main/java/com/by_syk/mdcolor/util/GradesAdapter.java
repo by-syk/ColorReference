@@ -22,11 +22,11 @@ public class GradesAdapter extends BaseAdapter {
 
     private Palette palette = null;
 
-    static class ViewHolder {
-        public CardView cardView;
-        public TextView tvGrade;
-        public TextView tvHex;
-        public ImageView ivStar;
+    private static class ViewHolder {
+        CardView cardView;
+        TextView tvGrade;
+        TextView tvHex;
+        ImageView ivStar;
     }
 
     public GradesAdapter(Context context, Palette palette) {

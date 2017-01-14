@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by By_syk on 2016-03-31.
  */
-public class MyAdapter extends BaseAdapter {
+public class MainAdapter extends BaseAdapter {
     private Context context = null;
     private LayoutInflater layoutInflater = null;
 
@@ -25,13 +25,13 @@ public class MyAdapter extends BaseAdapter {
 
     private int checked = -1;
 
-    static class ViewHolder {
-        public TextView tvName;
-        public TextView tvHex;
-        public ImageView ivHead;
+    private static class ViewHolder {
+        TextView tvName;
+        TextView tvHex;
+        ImageView ivHead;
     }
 
-    public MyAdapter(Context context, int checked) {
+    public MainAdapter(Context context, int checked) {
         this.context = context;
         this.checked = checked;
 

@@ -1,13 +1,9 @@
 package com.by_syk.mdcolor;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,15 +13,13 @@ import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.by_syk.lib.toast.GlobalToast;
+import com.by_syk.mdcolor.fragment.AboutDialog;
 import com.by_syk.mdcolor.util.C;
-import com.by_syk.mdcolor.util.ExtraUtil;
-import com.by_syk.mdcolor.util.MyAdapter;
+import com.by_syk.mdcolor.util.MainAdapter;
 import com.by_syk.mdcolor.util.Palette;
 
 import java.io.BufferedReader;
@@ -43,7 +37,7 @@ public class MainActivity extends BaseActivity {
     private View viewUIBoard;
     private ImageButton fabLucky;
 
-    private MyAdapter myAdapter = null;
+    private MainAdapter mainAdapter = null;
 
     private boolean is_fab_showed = false;
 
@@ -86,8 +80,8 @@ public class MainActivity extends BaseActivity {
         fabLucky = (ImageButton) findViewById(R.id.fab_lucky);
 
         // Sets the data behind the ListView.
-        myAdapter = new MyAdapter(this, sp.getInt(C.SP_THEME_COLOR, -1));
-        lvColors.setAdapter(myAdapter);
+        mainAdapter = new MainAdapter(this, sp.getInt(C.SP_THEME_COLOR, -1));
+        lvColors.setAdapter(mainAdapter);
 
         //lvColors.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
@@ -104,7 +98,7 @@ public class MainActivity extends BaseActivity {
                 viewDetailsToast();
 
                 sp.put(C.SP_THEME_COLOR, position).put(C.SP_WITH_DARK_AB,
-                        myAdapter.getItem(position).isLightThemeWithDarkABSuggested())
+                        mainAdapter.getItem(position).isLightThemeWithDarkABSuggested())
                         .save();
 
                 changeTheme();
@@ -128,7 +122,7 @@ public class MainActivity extends BaseActivity {
 
         initControlAndUIBoard();
 
-        initFAB();
+        initFab();
     }
 
     private void initControlAndUIBoard() {
@@ -179,7 +173,7 @@ public class MainActivity extends BaseActivity {
         });*/
     }
 
-    private void initFAB() {
+    private void initFab() {
         /*fabLucky.setImageResource(System.currentTimeMillis() % 2 == 0
                 ? R.drawable.ic_fab_random : R.drawable.ic_fab_random2);
         fabLucky.setImageResource(sharedPreferences.getInt(C.SP_THEME_STYLE, 0) == 0
@@ -192,16 +186,16 @@ public class MainActivity extends BaseActivity {
                 Random random = new Random();
                 int lucky_one;
                 do {
-                    lucky_one = random.nextInt(myAdapter.getCount());
-                } while (lucky_one == myAdapter.getChecked());
+                    lucky_one = random.nextInt(mainAdapter.getCount());
+                } while (lucky_one == mainAdapter.getChecked());
 
                 sp.put(C.SP_THEME_COLOR, lucky_one)
-                        .put(C.SP_WITH_DARK_AB, myAdapter.getItem(lucky_one)
+                        .put(C.SP_WITH_DARK_AB, mainAdapter.getItem(lucky_one)
                                 .isLightThemeWithDarkABSuggested())
                         .save();
 
                 GlobalToast.showToast(MainActivity.this, getString(R.string.toast_lucky_color,
-                        myAdapter.getItem(lucky_one).getName()));
+                        mainAdapter.getItem(lucky_one).getName()));
 
                 changeTheme();
             }
@@ -241,7 +235,7 @@ public class MainActivity extends BaseActivity {
         sp.save(C.SP_TOAST_DETAILS, false);
 
         Intent intent = new Intent(this, DetailsActivity.class);
-        intent.putExtra("palette", myAdapter.getItem(which));
+        intent.putExtra("palette", mainAdapter.getItem(which));
 
         startActivity(intent);
     }
@@ -281,8 +275,8 @@ public class MainActivity extends BaseActivity {
         protected void onPostExecute(List<Palette> dataList) {
             super.onPostExecute(dataList);
 
-            myAdapter.notifyRefresh(dataList);
-            //myAdapter.notifyDataSetChanged();
+            mainAdapter.notifyRefresh(dataList);
+            //mainAdapter.notifyDataSetChanged();
 
             //lvColors.smoothScrollToPosition(sharedPreferences.getInt(C.SP_THEME_COLOR, 0));
             lvColors.setSelection(sp.getInt(C.SP_THEME_COLOR));
@@ -326,39 +320,6 @@ public class MainActivity extends BaseActivity {
         finish();
     }
 
-    private void aboutDialog() {
-        SpannableString message = ExtraUtil
-                .getLinkableMessage(this, getString(R.string.about_desc));
-
-        AlertDialog alertDialog = getDialogBuilder()
-                .setTitle(R.string.dia_title_about)
-                .setMessage(message)
-                .setPositiveButton(R.string.dia_bt_ok, null)
-                .setNegativeButton(R.string.dia_bt_rate_me, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        ExtraUtil.gotoMarket(MainActivity.this, false);
-                    }
-                })
-                .create();
-        alertDialog.show();
-
-        // Make the url text clickable.
-        ((TextView) alertDialog.findViewById(android.R.id.message))
-                .setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
-    private AlertDialog.Builder getDialogBuilder() {
-        if (/*C.SDK >= 21 && */C.SDK < 23) {
-            if (sp.getInt(C.SP_THEME_COLOR, -1) >= 0) {
-                return new AlertDialog.Builder(this,
-                        DIALOG_THEME_ID[sp.getInt(C.SP_THEME_STYLE)]);
-            }
-        }
-
-        return new AlertDialog.Builder(this);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -371,24 +332,27 @@ public class MainActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.menu_reset: {
                 sp.delete(C.SP_THEME_COLOR);
+                sp.delete(C.SP_THEME_STYLE);
 
                 GlobalToast.showToast(this, R.string.toast_reset);
 
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        // Instead of this:
+                        /*// Instead of this:
                         // ((RadioGroup) findViewById(R.id.rg_themes)).check(R.id.rb_dark_theme);
 
                         ((RadioGroup) findViewById(R.id.rg_themes)).clearCheck();
-                        ((RadioButton) findViewById(R.id.rb_dark_theme)).setChecked(true);
+                        ((RadioButton) findViewById(R.id.rb_dark_theme)).setChecked(true);*/
+
+                        changeTheme();
                     }
                 }, 400);
 
                 return true;
             }
             case R.id.menu_about:
-                aboutDialog();
+                (new AboutDialog()).show(getFragmentManager(), "aboutDialog");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

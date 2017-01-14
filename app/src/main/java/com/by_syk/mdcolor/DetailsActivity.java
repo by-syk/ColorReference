@@ -1,14 +1,10 @@
 package com.by_syk.mdcolor;
 
 import android.app.ActionBar;
-import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.by_syk.lib.toast.GlobalToast;
+import com.by_syk.mdcolor.fragment.HelpDialog;
 import com.by_syk.mdcolor.util.C;
 import com.by_syk.mdcolor.util.GradesAdapter;
 import com.by_syk.mdcolor.util.Palette;
@@ -54,8 +51,10 @@ public class DetailsActivity extends BaseActivity {
         palette = (Palette) intent.getSerializableExtra("palette");
 
         ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle(palette.getName());
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(palette.getName());
+        }
 
         lvGrades = (ListView) findViewById(R.id.lv_grades);
 
@@ -92,44 +91,6 @@ public class DetailsActivity extends BaseActivity {
         GlobalToast.showToast(DetailsActivity.this, getString(R.string.toast_copied, text));
     }
 
-    private void helpDialog() {
-        String message = getString(R.string.help_desc);
-
-        // Add underlines for words: 500, 700, A200, A400.
-        SpannableString spannableString = new SpannableString(message);
-        int index = message.indexOf("500");
-        //new ForegroundColorSpan(palette.getColor(500))
-        spannableString.setSpan(new UnderlineSpan(), index, index + 3,
-                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        index = message.indexOf("700");
-        spannableString.setSpan(new UnderlineSpan(), index, index + 3,
-                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        index = message.indexOf("A200");
-        spannableString.setSpan(new UnderlineSpan(), index, index + 4,
-                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        index = message.indexOf("A400");
-        spannableString.setSpan(new UnderlineSpan(), index, index + 4,
-                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-
-        AlertDialog alertDialog = getDialogBuilder()
-                .setTitle(R.string.dia_title_help)
-                .setMessage(spannableString)
-                .setPositiveButton(R.string.dia_bt_got_it, null)
-                .create();
-        alertDialog.show();
-    }
-
-    private AlertDialog.Builder getDialogBuilder() {
-        if (/*C.SDK >= 21 && */C.SDK < 23) {
-            if (sp.getInt(C.SP_THEME_COLOR, -1) >= 0) {
-                return new AlertDialog.Builder(this,
-                        DIALOG_THEME_ID[sp.getInt(C.SP_THEME_STYLE)]);
-            }
-        }
-
-        return new AlertDialog.Builder(this);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_details, menu);
@@ -144,7 +105,7 @@ public class DetailsActivity extends BaseActivity {
                 finish();
                 return true;
             case R.id.menu_help:
-                helpDialog();
+                (new HelpDialog()).show(getFragmentManager(), "helpDialog");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

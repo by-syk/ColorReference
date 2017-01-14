@@ -1,3 +1,6 @@
+v?
+Fix: Reset issue.
+
 v1.1.1
 No screen flicker while switching colors.
 Support for tablets more better.

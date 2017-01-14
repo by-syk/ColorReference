@@ -16,6 +16,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.0"
             android:clipToPadding="false"
+            android:divider="@drawable/list_item_divider"
             android:paddingTop="@dimen/padding_above_list"
             android:scrollbars="none" />
 

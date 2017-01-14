@@ -3,18 +3,18 @@
 
     <string name="app_name">MD配色参考</string>
 
-    <string name="dia_title_about">关于</string>
-    <string name="dia_title_help">帮助</string>
-    <string name="dia_bt_ok">确定</string>
-    <string name="dia_bt_got_it">我知道了</string>
-    <string name="dia_bt_rate_me">&#x2605;评分</string>
+    <string name="dlg_title_about">关于</string>
+    <string name="dlg_title_help">帮助</string>
+    <string name="dlg_bt_ok">确定</string>
+    <string name="dlg_bt_got_it">我知道了</string>
+    <string name="dlg_bt_rate_me">&#x2605;评分</string>
 
     <string name="menu_reset">重置</string>
     <string name="menu_lucky">幸运色</string>
     <string name="menu_about">关于</string>
     <string name="menu_help">帮助</string>
 
-    <string name="toast_tap_again_details">再次触摸以查看详情</string>
+    <string name="toast_tap_again_details">再次触摸该项以查看详情</string>
     <string name="toast_copied">已复制到剪切板：%1$s</string>
     <string name="toast_tap_card_to_copy">触摸颜色卡片以复制</string>
     <string name="toast_reset">已重置为默认主题</string>
@@ -30,9 +30,9 @@
 [http://www.materialpalette.com](http://www.materialpalette.com)
 \n\u2714 访问项目在 GitHub 上的源码：
 [https://github.com/by-syk/ColorReference](https://github.com/by-syk/ColorReference)
-\n如果你喜欢这个小工具，请随意捐赠：
+\n如果你喜欢这个小工具，不妨捐赠：
 [By_syk@163.com](copy:By_syk@163.com)（支付宝账号）
-\nCopyright &#169; 2016 By_syk. All rights reserved."</string>
+\nCopyright &#169; 2016-2017 By_syk. All rights reserved."</string>
     <string name="help_desc">"如果还没有为您的App琢磨好配色，那么可以尝试从 Material Design 调色板中选择一套。
 \n建议：
 \n色调 500 用作基本色（colorPrimary）、700 用作基本色深色（colorPrimaryDark）、A200 或 A400 用作强调色（colorAccent）。"</string>

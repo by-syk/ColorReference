@@ -35,12 +35,12 @@ public class BaseActivity extends Activity {
             {R.style.app_theme_dark_grey, R.style.app_theme_light_grey, R.style.app_theme_light_d_grey},
             {R.style.app_theme_dark_blue_grey, R.style.app_theme_light_blue_grey, R.style.app_theme_light_d_blue_grey},
     };
-    public final int[] DIALOG_THEME_ID = {R.style.dialog_theme_dark,
+    public static final int[] DIALOG_THEME_ID = {R.style.dialog_theme_dark,
             R.style.dialog_theme_light, R.style.dialog_theme_light};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sp = new SP(this);
+        sp = new SP(this, false);
 
         int theme_color = sp.getInt(C.SP_THEME_COLOR, -1);
         int theme_style = sp.getInt(C.SP_THEME_STYLE);
