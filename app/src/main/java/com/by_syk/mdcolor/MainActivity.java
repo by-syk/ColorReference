@@ -62,7 +62,6 @@ public class MainActivity extends BaseActivity {
     private boolean isFabShowed = false;
 
     private NotificationManager notificationManager;
-    private Notification notification;
 
     private static Handler handler = new Handler();
 
@@ -74,6 +73,13 @@ public class MainActivity extends BaseActivity {
         init();
 
         (new LoadColorsTask()).execute();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        cancelNotification();
     }
 
     @Override
@@ -336,8 +342,6 @@ public class MainActivity extends BaseActivity {
     }
 
     private void changeTheme() {
-        cancelNotification();
-
         // Shine!!!
         //recreate();
 
@@ -363,12 +367,11 @@ public class MainActivity extends BaseActivity {
             builder.setContentTitle(getString(R.string.notify_title));
             builder.setContentText(getString(R.string.notify_content));
         }
-        notification = builder.build();
 
         if (notificationManager == null) {
             notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         }
-        notificationManager.notify(1, notification);
+        notificationManager.notify(1, builder.build());
     }
 
     private void cancelNotification() {

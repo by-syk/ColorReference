@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_weight="2.0"
         android:clipToPadding="false"
-        android:divider="?attr/list_item_divider"
+        android:divider="@drawable/list_item_divider"
         android:paddingTop="@dimen/padding_above_list"
         android:scrollbars="none" />
 

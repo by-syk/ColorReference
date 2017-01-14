@@ -20,7 +20,7 @@
     <item
         android:id="@+id/menu_help"
         android:title="@string/menu_help"
-        android:icon="?attr/ic_menu_help"
+        android:icon="?attr/ic_action_help"
         android:showAsAction="ifRoom" />
 
 </menu>

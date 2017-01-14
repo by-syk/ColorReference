@@ -20,7 +20,7 @@
     <item
         android:id="@+id/menu_notification"
         android:title="@string/menu_notification"
-        android:icon="?attr/ic_menu_notification"
+        android:icon="?attr/ic_action_notification"
         android:showAsAction="ifRoom" />
 
     <item

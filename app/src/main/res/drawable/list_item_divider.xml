@@ -15,7 +15,9 @@
   limitations under the License.
   -->
 
+<!--  @android:drawable/divider_horizontal_dark
+      @android:drawable/divider_horizontal_bright -->
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
     android:insetLeft="72dp"
     android:insetRight="0dp"
-    android:drawable="@android:drawable/divider_horizontal_dark" />
+    android:drawable="?android:attr/dividerHorizontal" />

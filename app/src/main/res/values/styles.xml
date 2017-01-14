@@ -20,24 +20,21 @@
     <style name="AppTheme" parent="@style/AppThemeDark" />
 
     <style name="AppThemeDark" parent="@android:style/Theme.Material">
-        <item name="ic_menu_notification">@drawable/ic_action_notification_dark</item>
-        <item name="ic_menu_help">@drawable/ic_action_help_dark</item>
+        <item name="ic_action_notification">@drawable/ic_action_notification_dark</item>
+        <item name="ic_action_help">@drawable/ic_action_help_dark</item>
         <item name="floating_color_for_accent">@color/floating_color_for_accent_white</item>
-        <item name="list_item_divider">@drawable/list_item_divider_dark</item>
     </style>
 
     <style name="AppThemeLight" parent="@android:style/Theme.Material.Light">
-        <item name="ic_menu_notification">@drawable/ic_action_notification_light</item>
-        <item name="ic_menu_help">@drawable/ic_action_help_light</item>
+        <item name="ic_action_notification">@drawable/ic_action_notification_light</item>
+        <item name="ic_action_help">@drawable/ic_action_help_light</item>
         <item name="floating_color_for_accent">@color/floating_color_for_accent_black</item>
-        <item name="list_item_divider">@drawable/list_item_divider_light</item>
     </style>
 
     <style name="AppThemeLightD" parent="@android:style/Theme.Material.Light.DarkActionBar">
-        <item name="ic_menu_notification">@drawable/ic_action_notification_dark</item>
-        <item name="ic_menu_help">@drawable/ic_action_help_dark</item>
+        <item name="ic_action_notification">@drawable/ic_action_notification_dark</item>
+        <item name="ic_action_help">@drawable/ic_action_help_dark</item>
         <item name="floating_color_for_accent">@color/floating_color_for_accent_black</item>
-        <item name="list_item_divider">@drawable/list_item_divider_dark</item>
     </style>
 
     <style name="AppThemeDark.Red">
