@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   Copyright 2016-2017 By_syk
 
@@ -15,13 +15,7 @@
   limitations under the License.
   -->
 
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="none"
-    android:divider="@null"
-    android:id="@+id/lv_grades"
-    android:paddingTop="@dimen/padding_above_list"
-    android:clipToPadding="false"
-    tools:context="com.by_syk.mdcolor.DetailsActivity" />
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="72dp"
+    android:insetRight="0dp"
+    android:drawable="@android:drawable/divider_horizontal_dark" />
