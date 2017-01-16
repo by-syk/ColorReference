@@ -51,7 +51,7 @@
 \nCopyright &#169; 2016-2017 By_syk. All rights reserved."</string>
     <string name="help_desc">"Apps that don’t have existing color schemes may select colors from the material design color palette.
 \nSuggestions:
-\n500 version for primary color, 700 version for dark primary color and A200 (or A400) for accent color."</string>
+\n<u>500</u> version for primary color, <u>700</u> version for dark primary color and <u>A200</u> (or <u>A400</u>) for accent color."</string>
     <!--<string name="board_desc">Tap the CONTROL BAR to show/hide the UI BOARD.</string>-->
 
     <string name="light_theme">Light</string>

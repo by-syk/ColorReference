@@ -36,27 +36,27 @@ import com.by_syk.mdcolor.util.C;
 public class HelpDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        String message = getString(R.string.help_desc);
-
-        // Add underlines for words: 500, 700, A200, A400.
-        SpannableString spannableString = new SpannableString(message);
-        int index = message.indexOf("500");
-        //new ForegroundColorSpan(palette.getColor(500))
-        spannableString.setSpan(new UnderlineSpan(), index, index + 3,
-                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        index = message.indexOf("700");
-        spannableString.setSpan(new UnderlineSpan(), index, index + 3,
-                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        index = message.indexOf("A200");
-        spannableString.setSpan(new UnderlineSpan(), index, index + 4,
-                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        index = message.indexOf("A400");
-        spannableString.setSpan(new UnderlineSpan(), index, index + 4,
-                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+//        String message = getString(R.string.help_desc);
+//
+//        // Add underlines for words: 500, 700, A200, A400.
+//        SpannableString spannableString = new SpannableString(message);
+//        int index = message.indexOf("500");
+//        //new ForegroundColorSpan(palette.getColor(500))
+//        spannableString.setSpan(new UnderlineSpan(), index, index + 3,
+//                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+//        index = message.indexOf("700");
+//        spannableString.setSpan(new UnderlineSpan(), index, index + 3,
+//                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+//        index = message.indexOf("A200");
+//        spannableString.setSpan(new UnderlineSpan(), index, index + 4,
+//                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+//        index = message.indexOf("A400");
+//        spannableString.setSpan(new UnderlineSpan(), index, index + 4,
+//                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
 
         return getDialogBuilder()
                 .setTitle(R.string.dlg_title_help)
-                .setMessage(spannableString)
+                .setMessage(R.string.help_desc)
                 .setPositiveButton(R.string.dlg_bt_got_it, null)
                 .create();
     }

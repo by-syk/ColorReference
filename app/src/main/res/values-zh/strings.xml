@@ -52,7 +52,7 @@
 \nCopyright &#169; 2016-2017 By_syk. All rights reserved."</string>
     <string name="help_desc">"如果还没有为您的App琢磨好配色，那么可以尝试从 Material Design 调色板中选择一套。
 \n建议：
-\n色调 500 用作基本色（colorPrimary）、700 用作基本色深色（colorPrimaryDark）、A200 或 A400 用作强调色（colorAccent）。"</string>
+\n色调 <u>500</u> 用作基本色（colorPrimary）、<u>700</u> 用作基本色深色（colorPrimaryDark）、<u>A200</u> 或 <u>A400</u> 用作强调色（colorAccent）。"</string>
     <!--<string name="board_desc">触摸控制栏以显示/隐藏UI面板。</string>-->
 
     <string name="light_theme">亮色</string>
