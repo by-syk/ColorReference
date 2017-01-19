@@ -40,8 +40,9 @@ import android.widget.Switch;
 import com.by_syk.lib.toast.GlobalToast;
 import com.by_syk.mdcolor.fragment.AboutDialog;
 import com.by_syk.mdcolor.util.C;
-import com.by_syk.mdcolor.util.adapter.MainAdapter;
 import com.by_syk.mdcolor.util.Palette;
+import com.by_syk.mdcolor.util.TransitionHelper;
+import com.by_syk.mdcolor.util.adapter.MainAdapter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -71,6 +72,8 @@ public class MainActivity extends BaseActivity {
         init();
 
         (new LoadColorsTask()).execute();
+
+        TransitionHelper.getInstance().onActivityCreate(this);
     }
 
     @Override
@@ -340,8 +343,10 @@ public class MainActivity extends BaseActivity {
         // Shine!!!
         //recreate();
 
+        TransitionHelper.getInstance().onRestartActivity(this);
         startActivity(new Intent(this, MainActivity.class));
         finish();
+        overridePendingTransition(0, 0);
     }
 
     private void showNotification() {
